@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClothesWashingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClothingArticle">
+          <Key>
+            <PropertyRef Name="Tag" />
+          </Key>
+          <Property Name="Tag" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="PurchaseDate" Type="date" />
+          <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="IdState" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClothingArticleInOutfit">
+          <Key>
+            <PropertyRef Name="ClothingArticleTag" />
+            <PropertyRef Name="IdOutfit" />
+          </Key>
+          <Property Name="ClothingArticleTag" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdOutfit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClothingArticleInWashingSession">
+          <Key>
+            <PropertyRef Name="ClothingArticleTag" />
+            <PropertyRef Name="IdWashingSession" />
+          </Key>
+          <Property Name="ClothingArticleTag" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdWashingSession" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClothingArticleState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsDirty" Type="bit" Nullable="false" />
+          <Property Name="LastWashDate" Type="datetime" />
+          <Property Name="LastWearDate" Type="datetime" />
+          <Property Name="WearsSinceLastWash" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Outfit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WearDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WashingSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WashDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ClothingArticle_ClothingArticleState">
+          <End Role="ClothingArticleState" Type="Self.ClothingArticleState" Multiplicity="1" />
+          <End Role="ClothingArticle" Type="Self.ClothingArticle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClothingArticleState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClothingArticle">
+              <PropertyRef Name="IdState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingArticleInOutfit_ClothingArticle">
+          <End Role="ClothingArticle" Type="Self.ClothingArticle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClothingArticleInOutfit" Type="Self.ClothingArticleInOutfit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClothingArticle">
+              <PropertyRef Name="Tag" />
+            </Principal>
+            <Dependent Role="ClothingArticleInOutfit">
+              <PropertyRef Name="ClothingArticleTag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingArticleInOutfit_Outfit">
+          <End Role="Outfit" Type="Self.Outfit" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClothingArticleInOutfit" Type="Self.ClothingArticleInOutfit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outfit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClothingArticleInOutfit">
+              <PropertyRef Name="IdOutfit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingArticleInWashingSession_ClothingArticle">
+          <End Role="ClothingArticle" Type="Self.ClothingArticle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClothingArticleInWashingSession" Type="Self.ClothingArticleInWashingSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClothingArticle">
+              <PropertyRef Name="Tag" />
+            </Principal>
+            <Dependent Role="ClothingArticleInWashingSession">
+              <PropertyRef Name="ClothingArticleTag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingArticleInWashingSession_WashingSession">
+          <End Role="WashingSession" Type="Self.WashingSession" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClothingArticleInWashingSession" Type="Self.ClothingArticleInWashingSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WashingSession">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClothingArticleInWashingSession">
+              <PropertyRef Name="IdWashingSession" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClothesWashingModelStoreContainer">
+          <EntitySet Name="ClothingArticle" EntityType="Self.ClothingArticle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClothingArticleInOutfit" EntityType="Self.ClothingArticleInOutfit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClothingArticleInWashingSession" EntityType="Self.ClothingArticleInWashingSession" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClothingArticleState" EntityType="Self.ClothingArticleState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Outfit" EntityType="Self.Outfit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WashingSession" EntityType="Self.WashingSession" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ClothingArticle_ClothingArticleState" Association="Self.FK_ClothingArticle_ClothingArticleState">
+            <End Role="ClothingArticleState" EntitySet="ClothingArticleState" />
+            <End Role="ClothingArticle" EntitySet="ClothingArticle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingArticleInOutfit_ClothingArticle" Association="Self.FK_ClothingArticleInOutfit_ClothingArticle">
+            <End Role="ClothingArticle" EntitySet="ClothingArticle" />
+            <End Role="ClothingArticleInOutfit" EntitySet="ClothingArticleInOutfit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingArticleInOutfit_Outfit" Association="Self.FK_ClothingArticleInOutfit_Outfit">
+            <End Role="Outfit" EntitySet="Outfit" />
+            <End Role="ClothingArticleInOutfit" EntitySet="ClothingArticleInOutfit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingArticleInWashingSession_ClothingArticle" Association="Self.FK_ClothingArticleInWashingSession_ClothingArticle">
+            <End Role="ClothingArticle" EntitySet="ClothingArticle" />
+            <End Role="ClothingArticleInWashingSession" EntitySet="ClothingArticleInWashingSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingArticleInWashingSession_WashingSession" Association="Self.FK_ClothingArticleInWashingSession_WashingSession">
+            <End Role="WashingSession" EntitySet="WashingSession" />
+            <End Role="ClothingArticleInWashingSession" EntitySet="ClothingArticleInWashingSession" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClothesWashingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClothingArticle">
+          <Key>
+            <PropertyRef Name="Tag" />
+          </Key>
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="ClothesWashingModel.ClothingArticleType" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IdState" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClothingArticleState" Relationship="Self.FK_ClothingArticle_ClothingArticleState" FromRole="ClothingArticle" ToRole="ClothingArticleState" />
+          <NavigationProperty Name="Outfits" Relationship="Self.ClothingArticleInOutfit" FromRole="ClothingArticle" ToRole="Outfit" />
+          <NavigationProperty Name="WashingSessions" Relationship="Self.ClothingArticleInWashingSession" FromRole="ClothingArticle" ToRole="WashingSession" />
+        </EntityType>
+        <EntityType Name="ClothingArticleState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsDirty" Type="Boolean" Nullable="false" />
+          <Property Name="LastWashDate" Type="DateTime" Precision="3" />
+          <Property Name="LastWearDate" Type="DateTime" Precision="3" />
+          <Property Name="WearsSinceLastWash" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="ClothingArticles" Relationship="Self.FK_ClothingArticle_ClothingArticleState" FromRole="ClothingArticleState" ToRole="ClothingArticle" />
+        </EntityType>
+        <EntityType Name="Outfit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WearDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ClothingArticles" Relationship="Self.ClothingArticleInOutfit" FromRole="Outfit" ToRole="ClothingArticle" />
+        </EntityType>
+        <EntityType Name="WashingSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WashDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ClothingArticles" Relationship="Self.ClothingArticleInWashingSession" FromRole="WashingSession" ToRole="ClothingArticle" />
+        </EntityType>
+        <Association Name="FK_ClothingArticle_ClothingArticleState">
+          <End Role="ClothingArticleState" Type="Self.ClothingArticleState" Multiplicity="1" />
+          <End Role="ClothingArticle" Type="Self.ClothingArticle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClothingArticleState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClothingArticle">
+              <PropertyRef Name="IdState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClothingArticleInOutfit">
+          <End Role="ClothingArticle" Type="Self.ClothingArticle" Multiplicity="*" />
+          <End Role="Outfit" Type="Self.Outfit" Multiplicity="*" />
+        </Association>
+        <Association Name="ClothingArticleInWashingSession">
+          <End Role="ClothingArticle" Type="Self.ClothingArticle" Multiplicity="*" />
+          <End Role="WashingSession" Type="Self.WashingSession" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ClothesWashingEntities" annotation:LazyLoadingEnabled="false">
+          <EntitySet Name="ClothingArticles" EntityType="Self.ClothingArticle" />
+          <EntitySet Name="ClothingArticleStates" EntityType="Self.ClothingArticleState" />
+          <EntitySet Name="Outfits" EntityType="Self.Outfit" />
+          <EntitySet Name="WashingSessions" EntityType="Self.WashingSession" />
+          <AssociationSet Name="FK_ClothingArticle_ClothingArticleState" Association="Self.FK_ClothingArticle_ClothingArticleState">
+            <End Role="ClothingArticleState" EntitySet="ClothingArticleStates" />
+            <End Role="ClothingArticle" EntitySet="ClothingArticles" />
+          </AssociationSet>
+          <AssociationSet Name="ClothingArticleInOutfit" Association="Self.ClothingArticleInOutfit">
+            <End Role="ClothingArticle" EntitySet="ClothingArticles" />
+            <End Role="Outfit" EntitySet="Outfits" />
+          </AssociationSet>
+          <AssociationSet Name="ClothingArticleInWashingSession" Association="Self.ClothingArticleInWashingSession">
+            <End Role="ClothingArticle" EntitySet="ClothingArticles" />
+            <End Role="WashingSession" EntitySet="WashingSessions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EnumType Name="ClothingArticleType" UnderlyingType="Byte">
+          <Member Name="Blouse" />
+          <Member Name="Shirt" />
+          <Member Name="Trousers" />
+          <Member Name="Shorts" />
+          <Member Name="Tshirt" />
+          <Member Name="Coat" />
+          <Member Name="Underwear" />
+          <Member Name="Undershirt" />
+          <Member Name="Socks" />
+          <Member Name="Cap" />
+          <Member Name="Scarf" />
+        </EnumType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClothesWashingModelStoreContainer" CdmEntityContainer="ClothesWashingEntities">
+          <EntitySetMapping Name="ClothingArticles">
+            <EntityTypeMapping TypeName="ClothesWashingModel.ClothingArticle">
+              <MappingFragment StoreEntitySet="ClothingArticle">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="IdState" ColumnName="IdState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClothingArticleStates">
+            <EntityTypeMapping TypeName="ClothesWashingModel.ClothingArticleState">
+              <MappingFragment StoreEntitySet="ClothingArticleState">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsDirty" ColumnName="IsDirty" />
+                <ScalarProperty Name="LastWashDate" ColumnName="LastWashDate" />
+                <ScalarProperty Name="LastWearDate" ColumnName="LastWearDate" />
+                <ScalarProperty Name="WearsSinceLastWash" ColumnName="WearsSinceLastWash" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Outfits">
+            <EntityTypeMapping TypeName="ClothesWashingModel.Outfit">
+              <MappingFragment StoreEntitySet="Outfit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="WearDate" ColumnName="WearDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WashingSessions">
+            <EntityTypeMapping TypeName="ClothesWashingModel.WashingSession">
+              <MappingFragment StoreEntitySet="WashingSession">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="WashDate" ColumnName="WashDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ClothingArticleInOutfit" TypeName="ClothesWashingModel.ClothingArticleInOutfit" StoreEntitySet="ClothingArticleInOutfit">
+            <EndProperty Name="ClothingArticle">
+              <ScalarProperty Name="Tag" ColumnName="ClothingArticleTag" />
+            </EndProperty>
+            <EndProperty Name="Outfit">
+              <ScalarProperty Name="Id" ColumnName="IdOutfit" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ClothingArticleInWashingSession" TypeName="ClothesWashingModel.ClothingArticleInWashingSession" StoreEntitySet="ClothingArticleInWashingSession">
+            <EndProperty Name="ClothingArticle">
+              <ScalarProperty Name="Tag" ColumnName="ClothingArticleTag" />
+            </EndProperty>
+            <EndProperty Name="WashingSession">
+              <ScalarProperty Name="Id" ColumnName="IdWashingSession" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

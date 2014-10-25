@@ -40,7 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClothingArticle.cs" />
+    <Compile Include="ClothingArticleState.cs" />
+    <Compile Include="ClothingArticleType.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="IUnitOfWorkFactory.cs" />
+    <Compile Include="OutfitBuilder.cs" />
+    <Compile Include="Services\DateTimeService.cs" />
+    <Compile Include="Services\IDateTimeService.cs" />
+    <Compile Include="Repositories\IClothesRepository.cs" />
+    <Compile Include="WardrobeManager.cs" />
+    <Compile Include="WashMonitor.cs" />
+    <Compile Include="WashRules\RuleEngine\IWashRuleEngine.cs" />
+    <Compile Include="Repositories\IWearLimitPolicyRepository.cs" />
+    <Compile Include="WashRules\RuleEngine\WashRuleEngine.cs" />
+    <Compile Include="WearLimits\DefaultWearLimitPolicy.cs" />
+    <Compile Include="WearLimits\IWearLimitPolicy.cs" />
+    <Compile Include="Outfit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IOutfitRepository.cs" />
+    <Compile Include="Repositories\IWashingSessionRepository.cs" />
+    <Compile Include="WashingSession.cs" />
+    <Compile Include="WashRules\DirtyClothingWashRule.cs" />
+    <Compile Include="WashRules\IWashRule.cs" />
+    <Compile Include="WashRules\WornClothingWashRule.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

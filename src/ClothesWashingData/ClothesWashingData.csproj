@@ -31,8 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +50,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseUnitOfWorkFactory.cs" />
+    <Compile Include="DataModel\ClothesWashingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClothesWashingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ClothesWashingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClothesWashingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ClothesWashingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClothesWashingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ClothingArticle.cs">
+      <DependentUpon>ClothesWashingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ClothingArticle.Partial.cs" />
+    <Compile Include="DataModel\ClothingArticleState.cs">
+      <DependentUpon>ClothesWashingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ClothingArticleState.Partial.cs" />
+    <Compile Include="DataModel\ClothingArticleType.cs">
+      <DependentUpon>ClothesWashingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ClothingArticleTypeExtensions.cs" />
+    <Compile Include="DataModel\Outfit.cs">
+      <DependentUpon>ClothesWashingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Outfit.Partial.cs" />
+    <Compile Include="DataModel\WashingSession.cs">
+      <DependentUpon>ClothesWashingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WashingSession.Partial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DatabaseClothesRepository.cs" />
+    <Compile Include="Repositories\DatabaseOutfitRepository.cs" />
+    <Compile Include="Repositories\DatabaseWashingSessionRepository.cs" />
+    <Compile Include="DatabaseUnitOfWork.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DataModel\ClothesWashingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClothesWashingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="DataModel\ClothesWashingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClothesWashingModel.edmx</DependentUpon>
+      <LastGenOutput>ClothesWashingModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModel\ClothesWashingModel.edmx.diagram">
+      <DependentUpon>ClothesWashingModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataModel\ClothesWashingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClothesWashingModel.edmx</DependentUpon>
+      <LastGenOutput>ClothesWashingModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClothesWashing\ClothesWashing.csproj">
+      <Project>{d42fd0cd-a8b1-45bd-a171-c63cd1052644}</Project>
+      <Name>ClothesWashing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
