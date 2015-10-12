@@ -1,17 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashing", "ClothesWashing\ClothesWashing.csproj", "{D42FD0CD-A8B1-45BD-A171-C63CD1052644}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingData", "ClothesWashingData\ClothesWashingData.csproj", "{CE495AC8-0581-4B9E-A720-2F1E4DA957D8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{31467903-3BA8-4ADD-A0AB-C6D7C7697BFD}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ClothesWashing.Database", "ClothesWashing.Database\ClothesWashing.Database.sqlproj", "{3677C75B-049A-4C8B-BD72-B3FEDD009C98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingEFCodeFirstDAL", "ClothesWashingEFCodeFirstDAL\ClothesWashingEFCodeFirstDAL.csproj", "{4505DCB1-BFDF-4A2C-86E0-03A66144339B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FC95B415-BE55-40AA-8D1B-723A24FDBD61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingApp", "ClothesWashingApp\ClothesWashingApp.csproj", "{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,21 +21,16 @@ Global
 		{D42FD0CD-A8B1-45BD-A171-C63CD1052644}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D42FD0CD-A8B1-45BD-A171-C63CD1052644}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D42FD0CD-A8B1-45BD-A171-C63CD1052644}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE495AC8-0581-4B9E-A720-2F1E4DA957D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE495AC8-0581-4B9E-A720-2F1E4DA957D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE495AC8-0581-4B9E-A720-2F1E4DA957D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE495AC8-0581-4B9E-A720-2F1E4DA957D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4505DCB1-BFDF-4A2C-86E0-03A66144339B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4505DCB1-BFDF-4A2C-86E0-03A66144339B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4505DCB1-BFDF-4A2C-86E0-03A66144339B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4505DCB1-BFDF-4A2C-86E0-03A66144339B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{3677C75B-049A-4C8B-BD72-B3FEDD009C98} = {FC95B415-BE55-40AA-8D1B-723A24FDBD61}
 	EndGlobalSection
 EndGlobal
