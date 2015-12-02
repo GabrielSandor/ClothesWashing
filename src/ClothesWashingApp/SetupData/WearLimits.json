@@ -1,0 +1,18 @@
+﻿{
+  "Blouse": 3,
+  "Shirt": 3,
+  "Trousers": 4,
+
+  "Shorts": 4,
+  "Tshirt": 3,
+
+  "Coat": 30,
+
+  "Underwear": 1,
+  "Undershirt": 1,
+  "Pijama": 7,
+  "Socks": 1,
+
+  "Cap": 30,
+  "Scarf": 30
+}

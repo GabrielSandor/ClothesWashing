@@ -21,8 +21,8 @@ namespace ClothesWashing.Services
         {
             var washSession = _washSessionFactory.BuildWashSession(clothingArticledIds);
 
-            var now = _dateTimeProvider.UtcNow();
-            washSession.StartWashing(now);
+            var today = _dateTimeProvider.Today();
+            washSession.StartWashing(today);
 
             _washSessionRepository.StoreWashSession(washSession);
         }

@@ -21,8 +21,8 @@ namespace ClothesWashing.Services
         {
             var outfit = _outfitFactory.BuildOutfit(clothingArticleIds);
 
-            var now = _dateTimeProvider.UtcNow();
-            outfit.StartWearing(now);
+            var today = _dateTimeProvider.Today();
+            outfit.StartWearing(today);
 
             _outfitRepository.StoreOutfit(outfit);
         }

@@ -52,7 +52,6 @@
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Services\FindDirtyClothesService.cs" />
     <Compile Include="Services\IFindDirtyClothesService.cs" />
-    <Compile Include="UnitOfWork\IUnitOfWorkFactory.cs" />
     <Compile Include="Washing\IWashSessionFactory.cs" />
     <Compile Include="Washing\IWashSessionRepository.cs" />
     <Compile Include="Washing\WashSession.cs" />

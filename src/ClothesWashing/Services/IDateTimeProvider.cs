@@ -5,5 +5,6 @@ namespace ClothesWashing.Services
     public interface IDateTimeProvider
     {
         DateTime UtcNow();
+        DateTime Today();
     }
 }

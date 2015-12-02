@@ -42,7 +42,7 @@ namespace ClothesWashing.Clothes
 
         public override string ToString()
         {
-            return $"{Id} ({Type})";
+            return $"{Id} ({Type}, {Brand})";
         }
     }
 }

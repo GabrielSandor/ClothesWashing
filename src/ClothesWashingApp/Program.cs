@@ -6,7 +6,7 @@ using ClothesWashingApp.Commands;
 
 namespace ClothesWashingApp
 {
-    class Program
+    sealed class Program
     {
         private static IContainer _diContainer;
 

@@ -55,7 +55,6 @@
     <Compile Include="Repositories\ClothesSqlRepository.cs" />
     <Compile Include="Repositories\WashSessionSqlRepository.cs" />
     <Compile Include="Repositories\OutfitSqlRepository.cs" />
-    <Compile Include="SqlUnitOfWorkFactory.cs" />
     <Compile Include="UnitOfWork\SqlUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

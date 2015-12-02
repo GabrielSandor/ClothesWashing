@@ -93,7 +93,6 @@
     "Description": "Pantaloni gri anotimp rece (2).",
     "Brand": "Fundango"
   },
-
   {
     "Id": "P_Gri_03",
     "Type": "Trousers",
@@ -121,5 +120,240 @@
     "Type": "Trousers",
     "Description": "Pantaloni albi (1).",
     "Brand": "L.O.G.G."
+  },
+  {
+    "Id": "P_MaroInchis_02",
+    "Type": "Trousers",
+    "Description": "Pantaloni maro inchis anotimp rece (2).",
+    "Brand": "Zara"
+  },
+
+
+  {
+    "Id": "T_Maro_01",
+    "Type": "Tshirt",
+    "Description": "Tricou maro Weyland-Yutani.",
+    "Brand": "Gildan"
+  },
+  {
+    "Id": "T_Gri_01",
+    "Type": "Tshirt",
+    "Description": "Tricou gri SDD Conf. 2015.",
+    "Brand": "L.O.G.G."
+  },
+  {
+    "Id": "T_Alb_01",
+    "Type": "Tshirt",
+    "Description": "Tricou alb Japonia."
+  },
+  {
+    "Id": "T_Galben_01",
+    "Type": "Tshirt",
+    "Description": "Tricou galben (1).",
+    "Brand": "H&M"
+  },
+  {
+    "Id": "T_Orange_01",
+    "Type": "Tshirt",
+    "Description": "Tricou portocaliu (1).",
+    "Brand": "Zarra"
+  },
+  {
+    "Id": "T_Negru_01",
+    "Type": "Tshirt",
+    "Description": "Tricou negru Underground Sounds (SodaTees).",
+    "Brand": "Frozen Munky"
+  },
+  {
+    "Id": "T_Verde_01",
+    "Type": "Tshirt",
+    "Description": "Tricou verde New York.",
+    "Brand": "Gildan"
+  },
+  {
+    "Id": "T_Negru_02",
+    "Type": "Tshirt",
+    "Description": "Tricou negru Evozon.",
+    "Brand": "Gildan"
+  },
+  {
+    "Id": "T_Alb_02",
+    "Type": "Tshirt",
+    "Description": "Tricou alb Digital Heart.",
+    "Brand": "SodaTees"
+  },
+  {
+    "Id": "T_Negru_03",
+    "Type": "Tshirt",
+    "Description": "Tricou negru Digital Heart.",
+    "Brand": "SodaTees"
+  },
+  {
+    "Id": "T_Blue_01",
+    "Type": "Tshirt",
+    "Description": "Tricou albastru Urban Addict Barcelona.",
+    "Brand": "Urban Addict"
+  },
+  {
+    "Id": "T_Negru_04",
+    "Type": "Tshirt",
+    "Description": "Tricou negru Digital Brain.",
+    "Brand": "SodaTees"
+  },
+  {
+    "Id": "T_Blue_02",
+    "Type": "Tshirt",
+    "Description": "Tricou albastru (2).",
+    "Brand": "H&M"
+  },
+  {
+    "Id": "T_Alb_03",
+    "Type": "Tshirt",
+    "Description": "Tricou alb in dungi negre.",
+    "Brand": "Kenvelo",
+    "Model": "Kvl Urban"
+  },
+  {
+    "Id": "T_Negru_05",
+    "Type": "Tshirt",
+    "Description": "Tricou negru (5).",
+    "Brand": "Adidas"
+  },
+  {
+    "Id": "T_Negru_06",
+    "Type": "Tshirt",
+    "Description": "Tricou negru fara maneci (1).",
+    "Brand": "Lyton"
+  },
+  {
+    "Id": "T_Negru_07",
+    "Type": "Tshirt",
+    "Description": "Tricou negru fara maneci (2).",
+    "Brand": "Berreto International",
+    "Model": "Blue 979"
+  },
+  {
+    "Id": "T_Gri_02",
+    "Type": "Tshirt",
+    "Description": "Tricou gri (2).",
+    "Brand": "RG512"
+  },
+  {
+    "Id": "T_Maro_02",
+    "Type": "Tshirt",
+    "Description": "Tricou maro in dungi (2).",
+    "Brand": "Zetti"
+  },
+  {
+    "Id": "T_Alb_04",
+    "Type": "Tshirt",
+    "Description": "Tricou alb (4).",
+    "Brand": "Massimo Dutti"
+  },
+  {
+    "Id": "T_Alb_05",
+    "Type": "Tshirt",
+    "Description": "Tricou alb (5).",
+    "Brand": "Rehord"
+  },
+  {
+    "Id": "T_Verde_02",
+    "Type": "Tshirt",
+    "Description": "Tricou verde (2).",
+    "Brand": "Massimo Dutti"
+  },
+  {
+    "Id": "T_Gri_03",
+    "Type": "Tshirt",
+    "Description": "Tricou gri in dungi negre.",
+    "Brand": "Massimo Dutti"
+  },
+  {
+    "Id": "T_Blue_03",
+    "Type": "Tshirt",
+    "Description": "Tricou FC Barcelona.",
+    "Brand": "Nike"
+  },
+
+
+  {
+    "Id": "CS_01",
+    "Type": "Shirt",
+    "Description": "Camasa maneci scurte cu dungi rosii.",
+    "Brand": "Columbia"
+  },
+  {
+    "Id": "CS_02",
+    "Type": "Shirt",
+    "Description": "Camasa maneci scurte cu dungi albastre.",
+    "Brand": "oviesse"
+  },
+  {
+    "Id": "C_Crem_01",
+    "Type": "Shirt",
+    "Description": "Camasa crem.",
+    "Brand": "Columbia"
+  },
+
+
+  {
+    "Id": "B_01",
+    "Type": "Blouse",
+    "Description": "Bluza gri-deschis cu dungi verzi.",
+    "Brand": "Piazza Italia",
+    "Model": "Man Basic"
+  },
+  {
+    "Id": "B_02",
+    "Type": "Blouse",
+    "Description": "Bluza cu dungi gri si albastru inchis.",
+    "Brand": "Fundango"
+  },
+  {
+    "Id": "B_Verde_01",
+    "Type": "Blouse",
+    "Description": "Bluza verde.",
+    "Brand": "Kenvelo"
+  },
+  {
+    "Id": "B_Gri_01",
+    "Type": "Blouse",
+    "Description": "Bluza gri cu dungi negre.",
+    "Brand": "Morani"
+  },
+  {
+    "Id": "B_Neagra_01",
+    "Type": "Blouse",
+    "Description": "Bluza neagra."
+  },
+  {
+    "Id": "B_Verde_02",
+    "Type": "Blouse",
+    "Description": "Bluza verde.",
+    "Brand": "Zara"
+  },
+  {
+    "Id": "B_Visinie_01",
+    "Type": "Blouse",
+    "Description": "Bluza visinie.",
+    "Brand": "Kenvelo"
+  },
+  {
+    "Id": "B_Visinie_02",
+    "Type": "Blouse",
+    "Description": "Bluza visinie cu pattern alb.",
+    "Brand": "Springfield"
+  },
+  {
+    "Id": "B_Gri_02",
+    "Type": "Blouse",
+    "Description": "Bluza gri cu dungi negre.",
+    "Brand": "Kenvelo"
+  },
+  {
+    "Id": "B_Gri_03",
+    "Type": "Blouse",
+    "Description": "Bluza gri.",
+    "Brand": "Mark & Spencer"
   }
 ]

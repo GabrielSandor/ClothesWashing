@@ -16,10 +16,33 @@ namespace ClothesWashingApp.Commands
         {
             switch (commandTypeSwitch)
             {
-                case "/o": return _container.Resolve<WearOutfitCommand>();
-                case "/w": return _container.Resolve<WashCommand>();
-                case "/i": return _container.Resolve<ImportClothesCommand>();
-                case "/d": return _container.Resolve<ShowDirtyClothesCommand>();
+                case "/o":
+                case "/outfit":
+                    return _container.Resolve<WearOutfitCommand>();
+
+                case "/w":
+                case "/wash":
+                    return _container.Resolve<WashCommand>();
+
+                case "/i":
+                case "/import":
+                    return _container.Resolve<ImportClothesCommand>();
+
+                case "/d":
+                case "/showDirty":
+                    return _container.Resolve<ShowDirtyClothesCommand>();
+
+                case "/wd":
+                case "/washDirty":
+                    return _container.Resolve<WashDirtyClothesCommand>();
+
+                case "/a":
+                case "/showAll":
+                    return _container.Resolve<ShowAllClothesCommand>();
+
+                case "/cd":
+                case "/clothesDetails":
+                    return _container.Resolve<ShowClothesDetailsCommand>();
 
                 default: throw new ArgumentException("Invalid command switch.", nameof(commandTypeSwitch));
             }

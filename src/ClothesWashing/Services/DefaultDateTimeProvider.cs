@@ -6,7 +6,12 @@ namespace ClothesWashing.Services
     {
         public DateTime UtcNow()
         {
-            return DateTime.UtcNow;
+            return DateTime.Now;
+        }
+
+        public DateTime Today()
+        {
+            return DateTime.Now.Date;
         }
     }
 }

@@ -17,9 +17,9 @@ namespace ClothesWashingEFCodeFirstDAL.UnitOfWork
         public IWashSessionRepository WashSessionRepository { get; }
         public IOutfitRepository OutfitRepository { get; }
 
-        public SqlUnitOfWork(string connectionString)
+        public SqlUnitOfWork()
         {
-            _clothesWashingContext = new ClothesWashingContext(connectionString);
+            _clothesWashingContext = new ClothesWashingContext();
 
             ClothesRepository = new ClothesSqlRepository(_clothesWashingContext);
             OutfitRepository = new OutfitSqlRepository(_clothesWashingContext);

@@ -20,7 +20,7 @@ namespace ClothesWashingApp.Commands
             Console.WriteLine("Showing clothes that need washing:");
             foreach (var clothingArticle in dirtyClothes)
             {
-                Console.WriteLine(clothingArticle.ToString());
+                Console.WriteLine(clothingArticle);
             }
         }
     }

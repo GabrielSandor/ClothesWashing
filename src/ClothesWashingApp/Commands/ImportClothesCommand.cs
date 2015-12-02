@@ -42,14 +42,32 @@ namespace ClothesWashingApp.Commands
             return clothes;
         }
 
-        private void StoreClothes(IEnumerable<ClothingArticle> clothes)
+        private void StoreClothes(IList<ClothingArticle> clothes)
         {
-            foreach (var clothingArticle in clothes)
+            var newClothes = clothes.Where(c => !ClothingArticleExistsInRepository(c)).ToList();
+
+            ShowDuplicateClothes(clothes, newClothes);
+
+            foreach (var clothingArticle in newClothes)
             {
                 _unitOfWork.ClothesRepository.StoreClothingArticle(clothingArticle);
             }
 
             _unitOfWork.SaveChanges();
+        }
+
+        private bool ClothingArticleExistsInRepository(ClothingArticle clothingArticle)
+        {
+            return _unitOfWork.ClothesRepository.RetrieveClothingArticleById(clothingArticle.Id) != null;
+        }
+
+        private static void ShowDuplicateClothes(IEnumerable<ClothingArticle> clothes, IEnumerable<ClothingArticle> newClothes)
+        {
+            var duplicatedClothes = clothes.Except(newClothes);
+            foreach (var clothingArticle in duplicatedClothes)
+            {
+                Console.WriteLine("Found duplicate clothing article: {0}.", clothingArticle);
+            }
         }
     }
 }

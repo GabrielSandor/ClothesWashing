@@ -11,10 +11,6 @@ namespace ClothesWashingEFCodeFirstDAL
         public DbSet<Outfit> WearSessions { get; set; }
         public DbSet<WashSession> WashSessions { get; set; }
 
-        public ClothesWashingContext(string connectionString) : base(connectionString)
-        {
-        }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
