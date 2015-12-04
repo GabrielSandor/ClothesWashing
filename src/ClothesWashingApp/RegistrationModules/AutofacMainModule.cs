@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Configuration;
+using Autofac;
 using ClothesWashing.Clothes;
 using ClothesWashing.Services;
 using ClothesWashing.UnitOfWork;
@@ -7,16 +8,15 @@ using ClothesWashing.Wearing;
 using ClothesWashing.Wearing.WearLimits;
 using ClothesWashingApp.Commands;
 using ClothesWashingEFCodeFirstDAL.UnitOfWork;
+using ClothesWashingMongoDbDAL.UnitOfWork;
 
-namespace ClothesWashingApp
+namespace ClothesWashingApp.RegistrationModules
 {
-    sealed class AutofacModule : Module
+    sealed class AutofacMainModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
-
-            RegisterUnitOfWorkWithRepositories(builder);
 
             builder.RegisterType<FindDirtyClothesService>().As<IFindDirtyClothesService>();
             builder.RegisterType<WearOutfitService>().As<IWearOutfitService>();
@@ -43,13 +43,6 @@ namespace ClothesWashingApp
             builder.RegisterType<WashDirtyClothesCommand>();
         }
 
-        private static void RegisterUnitOfWorkWithRepositories(ContainerBuilder builder)
-        {
-            builder.Register(c => new SqlUnitOfWork()).As<IUnitOfWork>().InstancePerLifetimeScope();
-
-            builder.Register(c => c.Resolve<IUnitOfWork>().ClothesRepository).As<IClothesRepository>();
-            builder.Register(c => c.Resolve<IUnitOfWork>().OutfitRepository).As<IOutfitRepository>();
-            builder.Register(c => c.Resolve<IUnitOfWork>().WashSessionRepository).As<IWashSessionRepository>();
-        }
+        
     }
 }

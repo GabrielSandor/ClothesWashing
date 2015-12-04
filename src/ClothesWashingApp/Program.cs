@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Autofac;
 using ClothesWashingApp.Commands;
+using ClothesWashingApp.RegistrationModules;
 
 namespace ClothesWashingApp
 {
@@ -27,7 +28,8 @@ namespace ClothesWashingApp
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterModule(new AutofacModule());
+            builder.RegisterModule(new AutofacMainModule());
+            builder.RegisterModule(new AutofacPersistenceModule());
 
             _diContainer = builder.Build();
         }

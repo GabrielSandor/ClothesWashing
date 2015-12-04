@@ -127,6 +127,12 @@
     "Description": "Pantaloni maro inchis anotimp rece (2).",
     "Brand": "Zara"
   },
+  {
+    "Id": "P_Verzi_01",
+    "Type": "Trousers",
+    "Description": "Pantaloni verzi.",
+    "Brand": "Columbia"
+  },
 
 
   {

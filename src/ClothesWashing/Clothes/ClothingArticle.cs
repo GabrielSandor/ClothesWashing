@@ -6,7 +6,6 @@ namespace ClothesWashing.Clothes
     {
         public string Id { get; set; }
 
-        //[Required]
         public ClothingArticleType Type { get; set; }
         public string Description { get; set; }
         public string Brand { get; set; }
@@ -17,7 +16,6 @@ namespace ClothesWashing.Clothes
         public DateTime? LastWashDate { get; set; }
         public DateTime? LastWearDate { get; set; }
 
-        //[Range(0, int.MaxValue)]
         public int TimesWornSinceLastWash { get; set; }
 
         public bool IsDirty { get; set; }
