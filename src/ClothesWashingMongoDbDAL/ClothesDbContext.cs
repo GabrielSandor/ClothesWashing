@@ -3,6 +3,7 @@ using ClothesWashing.Washing;
 using ClothesWashing.Wearing;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 
@@ -27,9 +28,9 @@ namespace ClothesWashingMongoDbDAL
             get { return _mongoDatabase.GetCollection<WashSession>("WashSessions"); }
         }
 
-        public ClothesDbContext()
+        public ClothesDbContext(string connectionString)
         {
-            var mongoClient = new MongoClient();
+            var mongoClient = new MongoClient(connectionString);
             _mongoDatabase = mongoClient.GetDatabase("ClothesWashing");
 
             RegisterClassMaps();
@@ -42,24 +43,20 @@ namespace ClothesWashingMongoDbDAL
                 cm.AutoMap();
 
                 cm.MapMember(c => c.Type).SetSerializer(new EnumSerializer<ClothingArticleType>(BsonType.String));
-
-                //cm.MapMember(c => c.PurchaseDate).SetSerializer(new DateTimeSerializer(dateOnly: true));
-                //cm.MapMember(c => c.LastWashDate).SetSerializer(new DateTimeSerializer(dateOnly: true));
-                //cm.MapMember(c => c.LastWearDate).SetSerializer(new DateTimeSerializer(dateOnly: true));
             });
 
             BsonClassMap.RegisterClassMap<Outfit>(cm =>
             {
                 cm.AutoMap();
 
-                //cm.MapMember(c => c.WearDate).SetSerializer(new DateTimeSerializer(dateOnly: true));
+                cm.MapIdMember(c => c.Id).SetIdGenerator(new IntIdGenerator(GuidGenerator.Instance));
             });
 
             BsonClassMap.RegisterClassMap<WashSession>(cm =>
             {
                 cm.AutoMap();
 
-                //cm.MapMember(c => c.WashDate).SetSerializer(new DateTimeSerializer(dateOnly: true));
+                cm.MapIdMember(c => c.Id).SetIdGenerator(new IntIdGenerator(GuidGenerator.Instance));
             });
         }
     }

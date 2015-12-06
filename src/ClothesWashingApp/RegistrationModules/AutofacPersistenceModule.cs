@@ -40,7 +40,9 @@ namespace ClothesWashingApp.RegistrationModules
 
         private static void RegisterNoSqlPersistence(ContainerBuilder builder)
         {
-            builder.Register(c => new MongoDbUnitOfWork()).As<IUnitOfWork>().InstancePerLifetimeScope();
+            var mongoDbConnectionString = ConfigurationManager.ConnectionStrings["MongoDbConnection"].ConnectionString;
+
+            builder.Register(c => new MongoDbUnitOfWork(mongoDbConnectionString)).As<IUnitOfWork>().InstancePerLifetimeScope();
 
             RegisterRepositories(builder);
         }

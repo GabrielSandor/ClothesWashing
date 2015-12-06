@@ -23,6 +23,8 @@ namespace ClothesWashingApp.Commands
 
                 clothesRepository.UpdateClothingArticle(clothingArticle);
             }
+
+            _unitOfWork.SaveChanges();
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using ClothesWashing.Clothes;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ClothesWashingMongoDbDAL.Repositories
 {
@@ -17,6 +15,9 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public void RemoveClothingArticle(ClothingArticle clothingArticle)
         {
+            var filter = IdFilterDefinition(clothingArticle.Id);
+
+            _clothingArticles.DeleteOneAsync(filter).Wait();
         }
 
         public IEnumerable<ClothingArticle> RetrieveAllClothes()
@@ -26,8 +27,7 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public ClothingArticle RetrieveClothingArticleById(string id)
         {
-            var filterDefBuilder = Builders<ClothingArticle>.Filter;
-            var filter = filterDefBuilder.Eq(ca => ca.Id, id);
+            var filter = IdFilterDefinition(id);
 
             return _clothingArticles.Find(filter).FirstOrDefaultAsync().Result;
         }
@@ -39,6 +39,17 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public void UpdateClothingArticle(ClothingArticle clothingArticle)
         {
+            var filter = IdFilterDefinition(clothingArticle.Id);
+
+            _clothingArticles.ReplaceOneAsync(filter, clothingArticle).Wait();
+        }
+
+        private static FilterDefinition<ClothingArticle> IdFilterDefinition(string clothingArticleId)
+        {
+            var filterDefBuilder = Builders<ClothingArticle>.Filter;
+            var filter = filterDefBuilder.Eq(ca => ca.Id, clothingArticleId);
+
+            return filter;
         }
     }
 }

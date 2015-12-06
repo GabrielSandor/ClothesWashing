@@ -32,6 +32,10 @@ namespace ClothesWashingApp.Commands
                 case "/showDirty":
                     return _container.Resolve<ShowDirtyClothesCommand>();
 
+                case "/sd":
+                case "/setDirty":
+                    return _container.Resolve<SetDirtyClothesCommand>();
+
                 case "/wd":
                 case "/washDirty":
                     return _container.Resolve<WashDirtyClothesCommand>();

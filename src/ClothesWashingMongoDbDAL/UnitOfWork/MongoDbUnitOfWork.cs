@@ -14,11 +14,13 @@ namespace ClothesWashingMongoDbDAL.UnitOfWork
 
         public IWashSessionRepository WashSessionRepository { get; }
 
-        public MongoDbUnitOfWork()
+        public MongoDbUnitOfWork(string connectionString)
         {
-            var clothesDbContext = new ClothesDbContext();
+            var clothesDbContext = new ClothesDbContext(connectionString);
 
             ClothesRepository = new ClothesMongoDbRepository(clothesDbContext);
+            OutfitRepository = new OutfitMongoDbRepository(clothesDbContext, ClothesRepository);
+            WashSessionRepository = new WashSessionMongoDbRepository(clothesDbContext, ClothesRepository);
         }
 
         public void SaveChanges()

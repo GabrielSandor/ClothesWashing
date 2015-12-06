@@ -1,14 +1,9 @@
-﻿using System.Configuration;
-using Autofac;
-using ClothesWashing.Clothes;
+﻿using Autofac;
 using ClothesWashing.Services;
-using ClothesWashing.UnitOfWork;
 using ClothesWashing.Washing;
 using ClothesWashing.Wearing;
 using ClothesWashing.Wearing.WearLimits;
 using ClothesWashingApp.Commands;
-using ClothesWashingEFCodeFirstDAL.UnitOfWork;
-using ClothesWashingMongoDbDAL.UnitOfWork;
 
 namespace ClothesWashingApp.RegistrationModules
 {
@@ -41,8 +36,7 @@ namespace ClothesWashingApp.RegistrationModules
             builder.RegisterType<ShowAllClothesCommand>();
             builder.RegisterType<ShowClothesDetailsCommand>();
             builder.RegisterType<WashDirtyClothesCommand>();
+            builder.RegisterType<SetDirtyClothesCommand>();
         }
-
-        
     }
 }
