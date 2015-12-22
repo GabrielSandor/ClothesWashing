@@ -20,12 +20,23 @@ namespace ClothesWashingApp.Commands
 
         public void Execute(IEnumerable<string> arguments)
         {
+            var clothesToWash = new HashSet<string>(arguments);
+
+            var dirtyClothesIds = FindDirtyClothes();
+
+            clothesToWash.UnionWith(dirtyClothesIds);
+
+            _washClothesService.WashClothes(clothesToWash);
+
+            _unitOfWork.SaveChanges();
+        }
+
+        private IEnumerable<string> FindDirtyClothes()
+        {
             var dirtyClothes = _findDirtyClothesService.FindDirtyClothes();
             var dirtyClothesIds = new HashSet<string>(dirtyClothes.Select(c => c.Id));
 
-            _washClothesService.WashClothes(dirtyClothesIds);
-
-            _unitOfWork.SaveChanges();
+            return dirtyClothesIds;
         }
     }
 }
