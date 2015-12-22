@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingEFCodeFirstDA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingApp", "ClothesWashingApp\ClothesWashingApp.csproj", "{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingMongoDbDAL", "ClothesWashingMongoDbDAL\ClothesWashingMongoDbDAL.csproj", "{851A9E0D-9BFC-4CAF-92E4-99030268B496}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CC919AE-B538-4DAB-8AC8-7E20FA6F911D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851A9E0D-9BFC-4CAF-92E4-99030268B496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851A9E0D-9BFC-4CAF-92E4-99030268B496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851A9E0D-9BFC-4CAF-92E4-99030268B496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851A9E0D-9BFC-4CAF-92E4-99030268B496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -127,6 +127,12 @@
     "Description": "Pantaloni maro inchis anotimp rece (2).",
     "Brand": "Zara"
   },
+  {
+    "Id": "P_Verzi_01",
+    "Type": "Trousers",
+    "Description": "Pantaloni verzi.",
+    "Brand": "Columbia"
+  },
 
 
   {
@@ -294,6 +300,12 @@
     "Description": "Camasa crem.",
     "Brand": "Columbia"
   },
+  {
+    "Id": "C_Maro_01",
+    "Type": "Shirt",
+    "Description": "Camasa maro.",
+    "Brand": "Columbia"
+  },
 
 
   {
@@ -325,6 +337,12 @@
     "Id": "B_Neagra_01",
     "Type": "Blouse",
     "Description": "Bluza neagra."
+  },
+  {
+    "Id": "B_Neagra_02",
+    "Type": "Blouse",
+    "Description": "Bluza neagra cu gri.",
+    "Brand": "Lee Cooper"
   },
   {
     "Id": "B_Verde_02",
