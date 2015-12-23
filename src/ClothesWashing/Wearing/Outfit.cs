@@ -4,13 +4,34 @@ using ClothesWashing.Clothes;
 
 namespace ClothesWashing.Wearing
 {
-    public class Outfit
+    public sealed class Outfit : ClothesCollection
     {
-        public int Id { get; set; }
-        public DateTime WearDate { get; set; }
-        public virtual ISet<ClothingArticle> Clothes { get; set; }
+        protected override IClothesCollectionState ClothesStorageState
+        {
+            get { return StorageState; }
+        }
 
-        public void StartWearing(DateTime wearDate)
+        public IOutfitState StorageState { get; }
+
+        public DateTime WearDate
+        {
+            get { return StorageState.WearDate; }
+            private set { StorageState.WearDate = value; }
+        }
+
+        public Outfit(IOutfitState storageState)
+            : base(storageState)
+        {
+            StorageState = storageState;
+        }
+
+        public Outfit(ISet<ClothingArticle> clothes, IOutfitState storageState)
+            : base(clothes, storageState)
+        {
+            StorageState = storageState;
+        }
+
+        public void Wear(DateTime wearDate)
         {
             WearDate = wearDate;
 

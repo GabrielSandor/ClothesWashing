@@ -55,6 +55,11 @@
     <Compile Include="Repositories\ClothesSqlRepository.cs" />
     <Compile Include="Repositories\WashSessionSqlRepository.cs" />
     <Compile Include="Repositories\OutfitSqlRepository.cs" />
+    <Compile Include="States\ClothesCollectionState.cs" />
+    <Compile Include="States\ClothingArticleState.cs" />
+    <Compile Include="States\OutfitState.cs" />
+    <Compile Include="States\SqlStorageStateAbstractFactory.cs" />
+    <Compile Include="States\WashSessionState.cs" />
     <Compile Include="UnitOfWork\SqlUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +71,7 @@
       <Name>ClothesWashing</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

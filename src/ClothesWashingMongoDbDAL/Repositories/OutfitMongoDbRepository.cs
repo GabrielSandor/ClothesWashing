@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ClothesWashing.Clothes;
 using ClothesWashing.Wearing;
+using ClothesWashingMongoDbDAL.States;
 using MongoDB.Driver;
 
 namespace ClothesWashingMongoDbDAL.Repositories
 {
     sealed class OutfitMongoDbRepository : IOutfitRepository
     {
-        private readonly IMongoCollection<Outfit> _outfits;
+        private readonly IMongoCollection<OutfitState> _outfits;
         private readonly IClothesRepository _clothesRepository;
 
         public OutfitMongoDbRepository(ClothesDbContext context, IClothesRepository clothesRepository)
@@ -18,7 +20,7 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public IEnumerable<Outfit> RetrieveAllOutfits()
         {
-            return _outfits.AsQueryable();
+            return _outfits.AsQueryable().Select(o => new Outfit(o));
         }
 
         public void StoreOutfit(Outfit outfit)
@@ -28,7 +30,8 @@ namespace ClothesWashingMongoDbDAL.Repositories
                 _clothesRepository.UpdateClothingArticle(clothingArticle);
             }
 
-            _outfits.InsertOneAsync(outfit).Wait();
+            var state = (OutfitState)outfit.StorageState;
+            _outfits.InsertOneAsync(state).Wait();
         }
     }
 }

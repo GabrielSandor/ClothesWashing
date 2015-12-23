@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ClothesWashing.Clothes;
 using ClothesWashing.Washing;
+using ClothesWashingMongoDbDAL.States;
 using MongoDB.Driver;
 
 namespace ClothesWashingMongoDbDAL.Repositories
 {
     sealed class WashSessionMongoDbRepository : IWashSessionRepository
     {
-        private readonly IMongoCollection<WashSession> _washSessions;
+        private readonly IMongoCollection<WashSessionState> _washSessions;
         private readonly IClothesRepository _clothesRepository;
 
         public WashSessionMongoDbRepository(ClothesDbContext context, IClothesRepository clothesRepository)
@@ -18,7 +20,7 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public IEnumerable<WashSession> RetrieveAllWashSessions()
         {
-            return _washSessions.AsQueryable();
+            return _washSessions.AsQueryable().Select(ws => new WashSession(ws));
         }
 
         public void StoreWashSession(WashSession washSession)
@@ -28,7 +30,8 @@ namespace ClothesWashingMongoDbDAL.Repositories
                 _clothesRepository.UpdateClothingArticle(clothingArticle);
             }
 
-            _washSessions.InsertOneAsync(washSession).Wait();
+            var state = (WashSessionState)washSession.StorageState;
+            _washSessions.InsertOneAsync(state).Wait();
         }
     }
 }

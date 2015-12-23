@@ -22,7 +22,7 @@ namespace ClothesWashing.Services
             var outfit = _outfitFactory.BuildOutfit(clothingArticleIds);
 
             var today = _dateTimeProvider.Today();
-            outfit.StartWearing(today);
+            outfit.Wear(today);
 
             _outfitRepository.StoreOutfit(outfit);
         }

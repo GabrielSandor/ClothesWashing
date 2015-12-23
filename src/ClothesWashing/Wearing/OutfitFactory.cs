@@ -8,20 +8,20 @@ namespace ClothesWashing.Wearing
     public sealed class OutfitFactory : IOutfitFactory
     {
         private readonly IClothesRepository _clothesRepository;
+        private readonly IStorageStateAbstractFactory _storageStateAbstractFactory;
 
-        public OutfitFactory(IClothesRepository clothesRepository)
+        public OutfitFactory(IClothesRepository clothesRepository, IStorageStateAbstractFactory storageStateAbstractFactory)
         {
             _clothesRepository = clothesRepository;
+            _storageStateAbstractFactory = storageStateAbstractFactory;
         }
 
         public Outfit BuildOutfit(ISet<string> clothingArticleIds)
         {
             var clothes = RetrieveClothes(clothingArticleIds);
 
-            return new Outfit
-            {
-                Clothes = new HashSet<ClothingArticle>(clothes)
-            };
+            var state = _storageStateAbstractFactory.BuildOutfitState();
+            return new Outfit(new HashSet<ClothingArticle>(clothes), state);
         }
 
         IEnumerable<ClothingArticle> RetrieveClothes(IEnumerable<string> clothingArticleIds)

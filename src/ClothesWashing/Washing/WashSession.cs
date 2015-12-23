@@ -4,13 +4,34 @@ using ClothesWashing.Clothes;
 
 namespace ClothesWashing.Washing
 {
-    public class WashSession
+    public sealed class WashSession : ClothesCollection
     {
-        public int Id { get; set; }
-        public DateTime WashDate { get; set; }
-        public virtual ISet<ClothingArticle> Clothes { get; set; }
+        protected override IClothesCollectionState ClothesStorageState
+        {
+            get { return StorageState; }
+        }
 
-        public void StartWashing(DateTime washDate)
+        public IWashSessionState StorageState { get; }
+
+        public DateTime WashDate
+        {
+            get { return StorageState.WashDate; }
+            private set { StorageState.WashDate = value; }
+        }
+
+        public WashSession(IWashSessionState storageState)
+            : base(storageState)
+        {
+            StorageState = storageState;
+        }
+
+        public WashSession(ISet<ClothingArticle> clothes, IWashSessionState storageState)
+            : base(clothes, storageState)
+        {
+            StorageState = storageState;
+        }
+
+        public void Perform(DateTime washDate)
         {
             WashDate = washDate;
 

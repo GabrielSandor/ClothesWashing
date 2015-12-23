@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using ClothesWashing.Clothes;
 using ClothesWashing.UnitOfWork;
+using ClothesWashingEFCodeFirstDAL.States;
 using Newtonsoft.Json;
 
 namespace ClothesWashingApp.Commands
@@ -37,9 +38,9 @@ namespace ClothesWashingApp.Commands
 
             var jsonInput = File.ReadAllText(jsonFilePath);
 
-            var clothes = JsonConvert.DeserializeObject<List<ClothingArticle>>(jsonInput);
+            var clothesStates = JsonConvert.DeserializeObject<List<ClothingArticleState>>(jsonInput);
 
-            return clothes;
+            return clothesStates.Select(s => new ClothingArticle(s)).ToList();
         }
 
         private void StoreClothes(IList<ClothingArticle> clothes)

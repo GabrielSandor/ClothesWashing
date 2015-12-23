@@ -11,7 +11,7 @@ namespace ClothesWashing.Services
 
         public DateTime Today()
         {
-            return DateTime.Now.Date;
+            return DateTime.Now/*.Date*/;
         }
     }
 }

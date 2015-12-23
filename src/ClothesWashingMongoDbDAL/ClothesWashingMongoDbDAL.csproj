@@ -58,6 +58,11 @@
     <Compile Include="Repositories\ClothesMongoDbRepository.cs" />
     <Compile Include="Repositories\OutfitMongoDbRepository.cs" />
     <Compile Include="Repositories\WashSessionMongoDbRepository.cs" />
+    <Compile Include="States\ClothesCollectionState.cs" />
+    <Compile Include="States\ClothingArticleState.cs" />
+    <Compile Include="States\MongoDbStorageStateAbstractFactory.cs" />
+    <Compile Include="States\OutfitState.cs" />
+    <Compile Include="States\WashSessionState.cs" />
     <Compile Include="UnitOfWork\MongoDbUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

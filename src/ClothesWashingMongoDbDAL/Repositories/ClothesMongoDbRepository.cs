@@ -1,16 +1,51 @@
 ﻿using ClothesWashing.Clothes;
 using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Linq;
+using ClothesWashingMongoDbDAL.States;
 
 namespace ClothesWashingMongoDbDAL.Repositories
 {
     sealed class ClothesMongoDbRepository : IClothesRepository
     {
-        private readonly IMongoCollection<ClothingArticle> _clothingArticles;
+        private readonly IMongoCollection<ClothingArticleState> _clothingArticles;
 
         public ClothesMongoDbRepository(ClothesDbContext clothesDbContext)
         {
             _clothingArticles = clothesDbContext.ClothingArticles;
+        }
+
+        public IEnumerable<ClothingArticle> RetrieveAllClothes()
+        {
+            return _clothingArticles.AsQueryable().Select(c => new ClothingArticle(c));
+        }
+
+        public ClothingArticle RetrieveClothingArticleById(string id)
+        {
+            var filter = IdFilterDefinition(id);
+
+            var state = _clothingArticles.Find(filter).FirstOrDefaultAsync().Result;
+            if (state == null)
+            {
+                return null;
+            }
+
+            return new ClothingArticle(state);
+        }
+
+        public void StoreClothingArticle(ClothingArticle clothingArticle)
+        {
+            var state = (ClothingArticleState)clothingArticle.StorageState;
+
+            _clothingArticles.InsertOneAsync(state).Wait();
+        }
+
+        public void UpdateClothingArticle(ClothingArticle clothingArticle)
+        {
+            var filter = IdFilterDefinition(clothingArticle.Id);
+            var state = (ClothingArticleState)clothingArticle.StorageState;
+
+            _clothingArticles.ReplaceOneAsync(filter, state).Wait();
         }
 
         public void RemoveClothingArticle(ClothingArticle clothingArticle)
@@ -20,33 +55,9 @@ namespace ClothesWashingMongoDbDAL.Repositories
             _clothingArticles.DeleteOneAsync(filter).Wait();
         }
 
-        public IEnumerable<ClothingArticle> RetrieveAllClothes()
+        private static FilterDefinition<ClothingArticleState> IdFilterDefinition(string clothingArticleId)
         {
-            return _clothingArticles.AsQueryable();
-        }
-
-        public ClothingArticle RetrieveClothingArticleById(string id)
-        {
-            var filter = IdFilterDefinition(id);
-
-            return _clothingArticles.Find(filter).FirstOrDefaultAsync().Result;
-        }
-
-        public void StoreClothingArticle(ClothingArticle clothingArticle)
-        {
-            _clothingArticles.InsertOneAsync(clothingArticle).Wait();
-        }
-
-        public void UpdateClothingArticle(ClothingArticle clothingArticle)
-        {
-            var filter = IdFilterDefinition(clothingArticle.Id);
-
-            _clothingArticles.ReplaceOneAsync(filter, clothingArticle).Wait();
-        }
-
-        private static FilterDefinition<ClothingArticle> IdFilterDefinition(string clothingArticleId)
-        {
-            var filterDefBuilder = Builders<ClothingArticle>.Filter;
+            var filterDefBuilder = Builders<ClothingArticleState>.Filter;
             var filter = filterDefBuilder.Eq(ca => ca.Id, clothingArticleId);
 
             return filter;

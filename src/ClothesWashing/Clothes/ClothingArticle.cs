@@ -4,32 +4,90 @@ namespace ClothesWashing.Clothes
 {
     public class ClothingArticle
     {
-        public string Id { get; set; }
+        public IClothingArticleState StorageState { get; }
 
-        public ClothingArticleType Type { get; set; }
-        public string Description { get; set; }
-        public string Brand { get; set; }
-        public string Model { get; set; }
-        public string SerialNumber { get; set; }
+        public string Id
+        {
+            get { return StorageState.Id; }
+            private set { StorageState.Id = value; }
+        }
 
-        public DateTime? PurchaseDate { get; set; }
-        public DateTime? LastWashDate { get; set; }
-        public DateTime? LastWearDate { get; set; }
+        public ClothingArticleType Type
+        {
+            get { return StorageState.Type; }
+            set { StorageState.Type = value; }
+        }
 
-        public int TimesWornSinceLastWash { get; set; }
+        public string Description
+        {
+            get { return StorageState.Description; }
+            set { StorageState.Description = value; }
+        }
 
-        public bool IsDirty { get; set; }
+        public string Brand
+        {
+            get { return StorageState.Brand; }
+            set { StorageState.Brand = value; }
+        }
+
+        public string Model
+        {
+            get { return StorageState.Model; }
+            set { StorageState.Model = value; }
+        }
+
+        public string SerialNumber
+        {
+            get { return StorageState.SerialNumber; }
+            set { StorageState.SerialNumber = value; }
+        }
+
+        public DateTime? PurchaseDate
+        {
+            get { return StorageState.PurchaseDate; }
+            set { StorageState.PurchaseDate = value; }
+        }
+
+        public DateTime? LastWashDate
+        {
+            get { return StorageState.LastWashDate; }
+            set { StorageState.LastWashDate = value; }
+        }
+
+        public DateTime? LastWearDate
+        {
+            get { return StorageState.LastWearDate; }
+            set { StorageState.LastWearDate = value; }
+        }
+
+        public ushort TimesWornSinceLastWash
+        {
+            get { return StorageState.TimesWornSinceLastWash; }
+            set { StorageState.TimesWornSinceLastWash = value; }
+        }
+
+        public bool IsDirty
+        {
+            get { return StorageState.IsDirty; }
+            set { StorageState.IsDirty = value; }
+        }
+
+        public ClothingArticle(IClothingArticleState storageState)
+        {
+            StorageState = storageState;
+        }
+
+        public ClothingArticle(string id, IClothingArticleState storageState)
+            : this(storageState)
+        {
+            Id = id;
+        }
 
         public void Wash(DateTime washDate)
         {
             IsDirty = false;
             LastWashDate = washDate;
             TimesWornSinceLastWash = 0;
-        }
-
-        public void SetDirty()
-        {
-            IsDirty = true;
         }
 
         public void Wear(DateTime wearDate)

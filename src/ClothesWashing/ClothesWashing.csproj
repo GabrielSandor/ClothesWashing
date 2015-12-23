@@ -34,14 +34,13 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clothes\ClothesCollection.cs" />
+    <Compile Include="Clothes\IClothesCollectionState.cs" />
     <Compile Include="Clothes\IClothesRepository.cs" />
+    <Compile Include="Clothes\IClothingArticleState.cs" />
+    <Compile Include="IStorageStateAbstractFactory.cs" />
     <Compile Include="Services\DefaultDateTimeProvider.cs" />
     <Compile Include="Services\IDateTimeProvider.cs" />
     <Compile Include="Services\IWashClothesService.cs" />
@@ -53,10 +52,12 @@
     <Compile Include="Services\IFindDirtyClothesService.cs" />
     <Compile Include="Washing\IWashSessionFactory.cs" />
     <Compile Include="Washing\IWashSessionRepository.cs" />
+    <Compile Include="Washing\IWashSessionState.cs" />
     <Compile Include="Washing\WashSession.cs" />
     <Compile Include="Washing\WashSessionFactory.cs" />
     <Compile Include="Wearing\IOutfitFactory.cs" />
     <Compile Include="Wearing\IOutfitRepository.cs" />
+    <Compile Include="Wearing\IOutfitState.cs" />
     <Compile Include="Wearing\OutfitFactory.cs" />
     <Compile Include="Wearing\WearLimits\DefaultWearLimitPolicy.cs" />
     <Compile Include="Wearing\WearLimits\IWearLimitPolicy.cs" />

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ClothesWashing.Wearing;
+using ClothesWashingEFCodeFirstDAL.States;
 
 namespace ClothesWashingEFCodeFirstDAL.Repositories
 {
@@ -14,12 +16,13 @@ namespace ClothesWashingEFCodeFirstDAL.Repositories
 
         public IEnumerable<Outfit> RetrieveAllOutfits()
         {
-            return _context.WearSessions;
+            return _context.Outfits.Select(o => new Outfit(o));
         }
 
         public void StoreOutfit(Outfit outfit)
         {
-            _context.WearSessions.Add(outfit);
+            var state = (OutfitState)outfit.StorageState;
+            _context.Outfits.Add(state);
         }
     }
 }

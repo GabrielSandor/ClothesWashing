@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using ClothesWashing.Clothes;
+using ClothesWashingEFCodeFirstDAL.States;
 
 namespace ClothesWashingEFCodeFirstDAL.Repositories
 {
@@ -15,27 +17,39 @@ namespace ClothesWashingEFCodeFirstDAL.Repositories
 
         public IEnumerable<ClothingArticle> RetrieveAllClothes()
         {
-            return _context.Clothes;
+            return _context.Clothes.ToList().Select(c => new ClothingArticle(c));
         }
 
         public ClothingArticle RetrieveClothingArticleById(string id)
         {
-            return _context.Clothes.Find(id);
+            var state = _context.Clothes.Find(id);
+            if (state == null)
+            {
+                return null;
+            }
+
+            return new ClothingArticle(state);
         }
 
         public void StoreClothingArticle(ClothingArticle clothingArticle)
         {
-            _context.Clothes.Add(clothingArticle);
+            var state = (ClothingArticleState)clothingArticle.StorageState;
+
+            _context.Clothes.Add(state);
         }
 
         public void UpdateClothingArticle(ClothingArticle clothingArticle)
         {
-            _context.Entry(clothingArticle).State = EntityState.Modified;
+            var state = (ClothingArticleState)clothingArticle.StorageState;
+
+            _context.Entry(state).State = EntityState.Modified;
         }
 
         public void RemoveClothingArticle(ClothingArticle clothingArticle)
         {
-            _context.Clothes.Remove(clothingArticle);
+            var state = _context.Clothes.Find(clothingArticle.Id);
+
+            _context.Clothes.Remove(state);
         }
     }
 }

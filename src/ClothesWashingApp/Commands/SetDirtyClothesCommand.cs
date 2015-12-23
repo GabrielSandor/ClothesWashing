@@ -19,7 +19,7 @@ namespace ClothesWashingApp.Commands
             foreach (var clothingArticleId in arguments)
             {
                 var clothingArticle = clothesRepository.RetrieveClothingArticleById(clothingArticleId);
-                clothingArticle.SetDirty();
+                clothingArticle.IsDirty = true;
 
                 clothesRepository.UpdateClothingArticle(clothingArticle);
             }

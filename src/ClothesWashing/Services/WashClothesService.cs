@@ -22,7 +22,7 @@ namespace ClothesWashing.Services
             var washSession = _washSessionFactory.BuildWashSession(clothingArticledIds);
 
             var today = _dateTimeProvider.Today();
-            washSession.StartWashing(today);
+            washSession.Perform(today);
 
             _washSessionRepository.StoreWashSession(washSession);
         }

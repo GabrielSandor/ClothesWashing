@@ -1,10 +1,13 @@
 ﻿using System.Configuration;
 using Autofac;
+using ClothesWashing;
 using ClothesWashing.Clothes;
 using ClothesWashing.UnitOfWork;
 using ClothesWashing.Washing;
 using ClothesWashing.Wearing;
+using ClothesWashingEFCodeFirstDAL.States;
 using ClothesWashingEFCodeFirstDAL.UnitOfWork;
+using ClothesWashingMongoDbDAL.States;
 using ClothesWashingMongoDbDAL.UnitOfWork;
 
 namespace ClothesWashingApp.RegistrationModules
@@ -34,6 +37,7 @@ namespace ClothesWashingApp.RegistrationModules
         private static void RegisterSqlPersistence(ContainerBuilder builder)
         {
             builder.Register(c => new SqlUnitOfWork()).As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterType<SqlStorageStateAbstractFactory>().As<IStorageStateAbstractFactory>().SingleInstance();
 
             RegisterRepositories(builder);
         }
@@ -43,6 +47,7 @@ namespace ClothesWashingApp.RegistrationModules
             var mongoDbConnectionString = ConfigurationManager.ConnectionStrings["MongoDbConnection"].ConnectionString;
 
             builder.Register(c => new MongoDbUnitOfWork(mongoDbConnectionString)).As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterType<MongoDbStorageStateAbstractFactory>().As<IStorageStateAbstractFactory>();
 
             RegisterRepositories(builder);
         }

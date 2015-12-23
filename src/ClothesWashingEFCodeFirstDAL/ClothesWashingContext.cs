@@ -1,39 +1,45 @@
 ﻿using System.Data.Entity;
-using ClothesWashing.Clothes;
-using ClothesWashing.Washing;
-using ClothesWashing.Wearing;
+using ClothesWashingEFCodeFirstDAL.States;
 
 namespace ClothesWashingEFCodeFirstDAL
 {
     public class ClothesWashingContext : DbContext
     {
-        public DbSet<ClothingArticle> Clothes { get; set; }
-        public DbSet<Outfit> WearSessions { get; set; }
-        public DbSet<WashSession> WashSessions { get; set; }
+        public DbSet<ClothingArticleState> Clothes { get; set; }
+        public DbSet<OutfitState> Outfits { get; set; }
+        public DbSet<WashSessionState> WashSessions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<WashSession>()
-            .HasMany(ws => ws.Clothes)
-            .WithMany()
-            .Map(x =>
-            {
-                x.MapLeftKey("WashSession_Id");
-                x.MapRightKey("ClothingArticle_Id");
-                x.ToTable("ClothesInWashSessions");
-            });
+            modelBuilder.Entity<ClothingArticleState>()
+                .Ignore(c => c.TimesWornSinceLastWash)
+                .Map(x => x.ToTable("Clothes"));
 
-            modelBuilder.Entity<Outfit>()
-            .HasMany(ws => ws.Clothes)
-            .WithMany()
-            .Map(x =>
-            {
-                x.MapLeftKey("WearSession_Id");
-                x.MapRightKey("ClothingArticle_Id");
-                x.ToTable("ClothesInWearSessions");
-            });
+            modelBuilder.Entity<WashSessionState>()
+                .Ignore(ws => ws.Clothes)
+                .Map(x => x.ToTable("WashSessions"))
+                .HasMany(ws => ws.ClothesStates)
+                .WithMany()
+                .Map(x =>
+                {
+                    x.MapLeftKey("WashSession_Id");
+                    x.MapRightKey("ClothingArticle_Id");
+                    x.ToTable("ClothesInWashSessions");
+                });
+
+            modelBuilder.Entity<OutfitState>()
+                .Ignore(ws => ws.Clothes)
+                .Map(x => x.ToTable("Outfits"))
+                .HasMany(ws => ws.ClothesStates)
+                .WithMany()
+                .Map(x =>
+                {
+                    x.MapLeftKey("Outfit_Id");
+                    x.MapRightKey("ClothingArticle_Id");
+                    x.ToTable("ClothesInOutfits");
+                });
         }
     }
 }
