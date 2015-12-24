@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashing", "ClothesWashing\ClothesWashing.csproj", "{D42FD0CD-A8B1-45BD-A171-C63CD1052644}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{31467903-3BA8-4ADD-A0AB-C6D7C7697BFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesWashingEFCodeFirstDAL", "ClothesWashingEFCodeFirstDAL\ClothesWashingEFCodeFirstDAL.csproj", "{4505DCB1-BFDF-4A2C-86E0-03A66144339B}"
 EndProject

@@ -10,7 +10,7 @@ namespace ClothesWashingMongoDbDAL.States
             get { return new List<IClothingArticleState>(ClothesStates).AsReadOnly(); }
         }
 
-        public ISet<ClothingArticleState> ClothesStates { get; }
+        public ISet<ClothingArticleState> ClothesStates { get; set; }
 
         protected ClothesCollectionState()
         {

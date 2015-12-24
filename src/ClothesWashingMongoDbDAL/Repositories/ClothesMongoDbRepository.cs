@@ -17,7 +17,8 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public IEnumerable<ClothingArticle> RetrieveAllClothes()
         {
-            return _clothingArticles.AsQueryable().Select(c => new ClothingArticle(c));
+            var states = _clothingArticles.AsQueryable().ToList();
+            return states.Select(c => new ClothingArticle(c));
         }
 
         public ClothingArticle RetrieveClothingArticleById(string id)

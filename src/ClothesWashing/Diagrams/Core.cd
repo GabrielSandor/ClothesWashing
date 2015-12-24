@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClothesWashing.Clothes.ClothingArticle">
+    <Position X="3.75" Y="0.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQACAEAAAAAgAAAEAIAIAAAQAAEAQAAAQQgBAAABAAA=</HashCode>
+      <FileName>Clothes\ClothingArticle.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+      <Property Name="StorageState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClothesWashing.Washing.WashSession">
+    <Position X="5" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAIAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Washing\WashSession.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StorageState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClothesWashing.Wearing.Outfit">
+    <Position X="2.5" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Wearing\Outfit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StorageState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClothesWashing.Clothes.ClothesCollection">
+    <Position X="3.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Clothes\ClothesCollection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ClothesStorageState" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Clothes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="ClothesWashing.Clothes.IClothesCollectionState">
+    <Position X="9" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Clothes\IClothesCollectionState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClothesWashing.Clothes.IClothingArticleState">
+    <Position X="0.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAgAAAAAIAAAAAQAAEAAAAAQQgBAAABAAA=</HashCode>
+      <FileName>Clothes\IClothingArticleState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClothesWashing.Washing.IWashSessionState">
+    <Position X="8" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Washing\IWashSessionState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClothesWashing.Wearing.IOutfitState">
+    <Position X="10.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Wearing\IOutfitState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ClothesWashing.Clothes.ClothingArticleType">
+    <Position X="7.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAABAAAAUAAgCAQBAAABAQAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Clothes\ClothingArticleType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -20,7 +20,8 @@ namespace ClothesWashingMongoDbDAL.Repositories
 
         public IEnumerable<WashSession> RetrieveAllWashSessions()
         {
-            return _washSessions.AsQueryable().Select(ws => new WashSession(ws));
+            var states = _washSessions.AsQueryable().ToList();
+            return states.Select(ws => new WashSession(ws));
         }
 
         public void StoreWashSession(WashSession washSession)

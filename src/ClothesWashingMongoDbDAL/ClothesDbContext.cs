@@ -44,6 +44,8 @@ namespace ClothesWashingMongoDbDAL
                 cm.MapMember(c => c.Type).SetSerializer(new EnumSerializer<ClothingArticleType>(BsonType.String));
             });
 
+            BsonClassMap.RegisterClassMap<ClothesCollectionState>();
+
             BsonClassMap.RegisterClassMap<OutfitState>(cm =>
             {
                 cm.AutoMap();

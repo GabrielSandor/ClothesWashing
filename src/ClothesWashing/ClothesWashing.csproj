@@ -67,7 +67,8 @@
     <Compile Include="Wearing\Outfit.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Core.cd" />
+    <None Include="Diagrams\Core.cd" />
+    <None Include="Diagrams\Repositories.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
