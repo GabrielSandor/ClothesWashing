@@ -322,6 +322,18 @@
     "Brand": "Fundango"
   },
   {
+    "Id": "B_Rosie_01",
+    "Type": "Blouse",
+    "Description": "Bluza rosie cu dungi gri.",
+    "Brand": "Kenvelo"
+  },
+  {
+    "Id": "B_Alba_01",
+    "Type": "Blouse",
+    "Description": "Bluza alba cu pattern albastru.",
+    "Brand": "Muzoland"
+  },
+  {
     "Id": "B_Verde_01",
     "Type": "Blouse",
     "Description": "Bluza verde.",
