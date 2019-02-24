@@ -1,389 +1,653 @@
 ﻿[
-  {
-    "Id": "PJ_Blue_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni jeans albastri (1).",
-    "Brand": "Mustang",
-    "Model": "Tramper",
-    "SerialNumber": "4032045819718"
-  },
-  {
-    "Id": "P_Blue_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni albastri (1).",
-    "Brand": "C&A",
-    "Model": "Canda"
-  },
-  {
-    "Id": "P_Blue_02",
-    "Type": "Trousers",
-    "Description": "Pantaloni albastri (2).",
-    "Brand": "Massimo Dutti",
-    "Model": "0040",
-    "SerialNumber": "00040006401326"
-  },
-  {
-    "Id": "P_Blue_03",
-    "Type": "Trousers",
-    "Description": "Pantaloni albastri (3).",
-    "Brand": "Kenvelo",
-    "SerialNumber": "2050002247666"
-  },
-  {
-    "Id": "P_Bej_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni bej (1).",
-    "Brand": "Springfield",
-    "Model": "Chinos",
-    "SerialNumber": "8433882630607"
-  },
-  {
-    "Id": "P_Bej_02",
-    "Type": "Trousers",
-    "Description": "Pantaloni bej anotimp rece (2).",
-    "Brand": "Massimo Dutti",
-    "Model": "0010",
-    "SerialNumber": "00010014710406"
-  },
-  {
-    "Id": "P_Bej_03",
-    "Type": "Trousers",
-    "Description": "Pantaloni bej (3).",
-    "Brand": "C&A",
-    "Model": "Canda"
-  },
-  {
-    "Id": "P_Bej_04",
-    "Type": "Trousers",
-    "Description": "Pantaloni bej (4).",
-    "Brand": "Massimo Dutti",
-    "Model": "0040"
-  },
-  {
-    "Id": "P_MaroDeschis_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni maro deschis anotimp rece (1).",
-    "Brand": "Massimo Dutti",
-    "Model": "0038",
-    "SerialNumber": "00038338710445"
-  },
-  {
-    "Id": "P_Maro_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni maro (1).",
-    "Brand": "H&M",
-    "Model": "L.O.G.G."
-  },
-  {
-    "Id": "P_MaroInchis_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni maro inchis anotimp rece (1).",
-    "Brand": "Piazza Italia"
-  },
-  {
-    "Id": "P_Gri_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni gri (1).",
-    "Brand": "C&A",
-    "Model": "Angelo Litrico"
-  },
-  {
-    "Id": "P_Gri_02",
-    "Type": "Trousers",
-    "Description": "Pantaloni gri anotimp rece (2).",
-    "Brand": "Fundango"
-  },
-  {
-    "Id": "P_Gri_03",
-    "Type": "Trousers",
-    "Description": "Pantaloni gri (3).",
-    "Brand": "Massimo Dutti",
-    "Model": "0027",
-    "SerialNumber": "00027009505329"
-  },
-  {
-    "Id": "P_GriInchis_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni gri inchis (1).",
-    "Brand": "Dockers",
-    "Model": "D1"
-  },
-  {
-    "Id": "P_Negri_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni negri anotimp rece (1).",
-    "Brand": "C&A",
-    "Model": "Westbury"
-  },
-  {
-    "Id": "P_Albi_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni albi (1).",
-    "Brand": "L.O.G.G."
-  },
-  {
-    "Id": "P_MaroInchis_02",
-    "Type": "Trousers",
-    "Description": "Pantaloni maro inchis anotimp rece (2).",
-    "Brand": "Zara"
-  },
-  {
-    "Id": "P_Verzi_01",
-    "Type": "Trousers",
-    "Description": "Pantaloni verzi.",
-    "Brand": "Columbia"
-  },
+    {
+        "Id": "PJ_Blue_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni jeans albastri (1).",
+        "Brand": "Mustang",
+        "Model": "Tramper",
+        "SerialNumber": "4032045819718"
+    },
+    {
+        "Id": "PJ_Blue_02",
+        "Type": "Trousers",
+        "Description": "Pantaloni jeans albastri (2).",
+        "Brand": "Lee Cooper",
+        "Model": "Harry"
+    },
+    {
+        "Id": "P_Blue_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni albastri (1).",
+        "Brand": "C&A",
+        "Model": "Canda"
+    },
+    {
+        "Id": "P_Blue_02",
+        "Type": "Trousers",
+        "Description": "Pantaloni albastri (2).",
+        "Brand": "Massimo Dutti",
+        "Model": "0040",
+        "SerialNumber": "00040006401326"
+    },
+    {
+        "Id": "P_Blue_03",
+        "Type": "Trousers",
+        "Description": "Pantaloni albastri (3).",
+        "Brand": "Kenvelo",
+        "SerialNumber": "2050002247666"
+    },
+    {
+        "Id": "P_Blue_04",
+        "Type": "Trousers",
+        "Description": "Pantaloni albastri grosi (4).",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "P_Bej_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni bej (1).",
+        "Brand": "Springfield",
+        "Model": "Chinos",
+        "SerialNumber": "8433882630607"
+    },
+    {
+        "Id": "P_Bej_02",
+        "Type": "Trousers",
+        "Description": "Pantaloni bej anotimp rece (2).",
+        "Brand": "Massimo Dutti",
+        "Model": "0010",
+        "SerialNumber": "00010014710406"
+    },
+    {
+        "Id": "P_Bej_03",
+        "Type": "Trousers",
+        "Description": "Pantaloni bej (3).",
+        "Brand": "C&A",
+        "Model": "Canda"
+    },
+    {
+        "Id": "P_Bej_04",
+        "Type": "Trousers",
+        "Description": "Pantaloni bej (4).",
+        "Brand": "Massimo Dutti",
+        "Model": "0040"
+    },
+    {
+        "Id": "P_Bej_05",
+        "Type": "Trousers",
+        "Description": "Pantaloni bej (5).",
+        "Brand": "O'Neill"
+    },
+    {
+        "Id": "P_MaroDeschis_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni maro deschis anotimp rece (1).",
+        "Brand": "Massimo Dutti",
+        "Model": "0038",
+        "SerialNumber": "00038338710445"
+    },
+    {
+        "Id": "P_Maro_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni maro (1).",
+        "Brand": "H&M",
+        "Model": "L.O.G.G."
+    },
+    {
+        "Id": "P_MaroInchis_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni maro inchis anotimp rece (1).",
+        "Brand": "Piazza Italia"
+    },
+    {
+        "Id": "P_Gri_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni gri (1).",
+        "Brand": "C&A",
+        "Model": "Angelo Litrico"
+    },
+    {
+        "Id": "P_Gri_02",
+        "Type": "Trousers",
+        "Description": "Pantaloni gri anotimp rece (2).",
+        "Brand": "Fundango"
+    },
+    {
+        "Id": "P_Gri_03",
+        "Type": "Trousers",
+        "Description": "Pantaloni gri (3).",
+        "Brand": "Massimo Dutti",
+        "Model": "0027",
+        "SerialNumber": "00027009505329"
+    },
+    {
+        "Id": "P_Gri_04",
+        "Type": "Trousers",
+        "Description": "Pantaloni gri (4).",
+        "Brand": "C&A",
+        "Model": "Thermo"
+    },
+    {
+        "Id": "P_Gri_05",
+        "Type": "Trousers",
+        "Description": "Pantaloni gri (5).",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "P_GriInchis_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni gri inchis (1).",
+        "Brand": "Dockers",
+        "Model": "D1"
+    },
+    {
+        "Id": "P_Negri_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni negri anotimp rece (1).",
+        "Brand": "C&A",
+        "Model": "Westbury"
+    },
+    {
+        "Id": "P_Albi_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni albi (1).",
+        "Brand": "L.O.G.G."
+    },
+    {
+        "Id": "P_MaroInchis_02",
+        "Type": "Trousers",
+        "Description": "Pantaloni maro inchis anotimp rece (2).",
+        "Brand": "Zara"
+    },
+    {
+        "Id": "P_Verzi_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni verzi.",
+        "Brand": "Columbia"
+    },
+    {
+        "Id": "P_Caro_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni in carouri.",
+        "Brand": "Massimo Dutti",
+        "Model": "0071",
+        "SerialNumber": "00071279710402"
+    },
+    {
+        "Id": "P_Caro_02",
+        "Type": "Trousers",
+        "Description": "Pantaloni in carouri.",
+        "Brand": "Damat"
+    },
+    {
+        "Id": "P_Rosii_01",
+        "Type": "Trousers",
+        "Description": "Pantaloni rosii slim fit.",
+        "Brand": "L.O.G.G"
+    },
 
 
-  {
-    "Id": "T_Maro_01",
-    "Type": "Tshirt",
-    "Description": "Tricou maro Weyland-Yutani.",
-    "Brand": "Gildan"
-  },
-  {
-    "Id": "T_Gri_01",
-    "Type": "Tshirt",
-    "Description": "Tricou gri SDD Conf. 2015.",
-    "Brand": "L.O.G.G."
-  },
-  {
-    "Id": "T_Alb_01",
-    "Type": "Tshirt",
-    "Description": "Tricou alb Japonia."
-  },
-  {
-    "Id": "T_Galben_01",
-    "Type": "Tshirt",
-    "Description": "Tricou galben (1).",
-    "Brand": "H&M"
-  },
-  {
-    "Id": "T_Orange_01",
-    "Type": "Tshirt",
-    "Description": "Tricou portocaliu (1).",
-    "Brand": "Zarra"
-  },
-  {
-    "Id": "T_Negru_01",
-    "Type": "Tshirt",
-    "Description": "Tricou negru Underground Sounds (SodaTees).",
-    "Brand": "Frozen Munky"
-  },
-  {
-    "Id": "T_Verde_01",
-    "Type": "Tshirt",
-    "Description": "Tricou verde New York.",
-    "Brand": "Gildan"
-  },
-  {
-    "Id": "T_Negru_02",
-    "Type": "Tshirt",
-    "Description": "Tricou negru Evozon.",
-    "Brand": "Gildan"
-  },
-  {
-    "Id": "T_Alb_02",
-    "Type": "Tshirt",
-    "Description": "Tricou alb Digital Heart.",
-    "Brand": "SodaTees"
-  },
-  {
-    "Id": "T_Negru_03",
-    "Type": "Tshirt",
-    "Description": "Tricou negru Digital Heart.",
-    "Brand": "SodaTees"
-  },
-  {
-    "Id": "T_Blue_01",
-    "Type": "Tshirt",
-    "Description": "Tricou albastru Urban Addict Barcelona.",
-    "Brand": "Urban Addict"
-  },
-  {
-    "Id": "T_Negru_04",
-    "Type": "Tshirt",
-    "Description": "Tricou negru Digital Brain.",
-    "Brand": "SodaTees"
-  },
-  {
-    "Id": "T_Blue_02",
-    "Type": "Tshirt",
-    "Description": "Tricou albastru (2).",
-    "Brand": "H&M"
-  },
-  {
-    "Id": "T_Alb_03",
-    "Type": "Tshirt",
-    "Description": "Tricou alb in dungi negre.",
-    "Brand": "Kenvelo",
-    "Model": "Kvl Urban"
-  },
-  {
-    "Id": "T_Negru_05",
-    "Type": "Tshirt",
-    "Description": "Tricou negru (5).",
-    "Brand": "Adidas"
-  },
-  {
-    "Id": "T_Negru_06",
-    "Type": "Tshirt",
-    "Description": "Tricou negru fara maneci (1).",
-    "Brand": "Lyton"
-  },
-  {
-    "Id": "T_Negru_07",
-    "Type": "Tshirt",
-    "Description": "Tricou negru fara maneci (2).",
-    "Brand": "Berreto International",
-    "Model": "Blue 979"
-  },
-  {
-    "Id": "T_Gri_02",
-    "Type": "Tshirt",
-    "Description": "Tricou gri (2).",
-    "Brand": "RG512"
-  },
-  {
-    "Id": "T_Maro_02",
-    "Type": "Tshirt",
-    "Description": "Tricou maro in dungi (2).",
-    "Brand": "Zetti"
-  },
-  {
-    "Id": "T_Alb_04",
-    "Type": "Tshirt",
-    "Description": "Tricou alb (4).",
-    "Brand": "Massimo Dutti"
-  },
-  {
-    "Id": "T_Alb_05",
-    "Type": "Tshirt",
-    "Description": "Tricou alb (5).",
-    "Brand": "Rehord"
-  },
-  {
-    "Id": "T_Verde_02",
-    "Type": "Tshirt",
-    "Description": "Tricou verde (2).",
-    "Brand": "Massimo Dutti"
-  },
-  {
-    "Id": "T_Gri_03",
-    "Type": "Tshirt",
-    "Description": "Tricou gri in dungi negre.",
-    "Brand": "Massimo Dutti"
-  },
-  {
-    "Id": "T_Blue_03",
-    "Type": "Tshirt",
-    "Description": "Tricou FC Barcelona.",
-    "Brand": "Nike"
-  },
+    {
+        "Id": "PS_Blue_01",
+        "Type": "Shorts",
+        "Description": "Pantaloni scurti albastri.",
+        "Brand": "Springfield"
+    },
+    {
+        "Id": "PS_Bej_01",
+        "Type": "Shorts",
+        "Description": "Pantaloni scurti bej.",
+        "Brand": "Springfield"
+    },
+    {
+        "Id": "PS_01",
+        "Type": "Shorts",
+        "Description": "Pantaloni scurti.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "PS_Negri_01",
+        "Type": "Shorts",
+        "Description": "Pantaloni scurti negri.",
+        "Brand": "New Yorker",
+        "Model": "Fishbone"
+    },
+    {
+        "Id": "PS_Rosii_01",
+        "Type": "Shorts",
+        "Description": "Pantaloni scurti rosii.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "PS_Jeans_01",
+        "Type": "Shorts",
+        "Description": "Pantaloni scurti jeans albastri.",
+        "Brand": "Bigotti"
+    },
 
 
-  {
-    "Id": "CS_01",
-    "Type": "Shirt",
-    "Description": "Camasa maneci scurte cu dungi rosii.",
-    "Brand": "Columbia"
-  },
-  {
-    "Id": "CS_02",
-    "Type": "Shirt",
-    "Description": "Camasa maneci scurte cu dungi albastre.",
-    "Brand": "oviesse"
-  },
-  {
-    "Id": "C_Crem_01",
-    "Type": "Shirt",
-    "Description": "Camasa crem.",
-    "Brand": "Columbia"
-  },
-  {
-    "Id": "C_Maro_01",
-    "Type": "Shirt",
-    "Description": "Camasa maro.",
-    "Brand": "Columbia"
-  },
+    {
+        "Id": "T_Maro_01",
+        "Type": "Tshirt",
+        "Description": "Tricou maro Weyland-Yutani.",
+        "Brand": "Gildan"
+    },
+    {
+        "Id": "T_Gri_01",
+        "Type": "Tshirt",
+        "Description": "Tricou gri SDD Conf. 2015.",
+        "Brand": "L.O.G.G."
+    },
+    {
+        "Id": "T_Alb_01",
+        "Type": "Tshirt",
+        "Description": "Tricou alb Japonia."
+    },
+    {
+        "Id": "T_Galben_01",
+        "Type": "Tshirt",
+        "Description": "Tricou galben (1).",
+        "Brand": "H&M"
+    },
+    {
+        "Id": "T_Galben_02",
+        "Type": "Tshirt",
+        "Description": "Tricou galben (2).",
+        "Brand": "Columbia"
+    },
+    {
+        "Id": "T_Orange_01",
+        "Type": "Tshirt",
+        "Description": "Tricou portocaliu (1).",
+        "Brand": "Zarra"
+    },
+    {
+        "Id": "T_Orange_02",
+        "Type": "Tshirt",
+        "Description": "Tricou portocaliu (2).",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "T_Negru_01",
+        "Type": "Tshirt",
+        "Description": "Tricou negru Underground Sounds (SodaTees).",
+        "Brand": "Frozen Munky"
+    },
+    {
+        "Id": "T_Verde_01",
+        "Type": "Tshirt",
+        "Description": "Tricou verde New York.",
+        "Brand": "Gildan"
+    },
+    {
+        "Id": "T_Negru_02",
+        "Type": "Tshirt",
+        "Description": "Tricou negru Evozon.",
+        "Brand": "Gildan"
+    },
+    {
+        "Id": "T_Alb_02",
+        "Type": "Tshirt",
+        "Description": "Tricou alb Digital Heart.",
+        "Brand": "SodaTees"
+    },
+    {
+        "Id": "T_Negru_03",
+        "Type": "Tshirt",
+        "Description": "Tricou negru Digital Heart.",
+        "Brand": "SodaTees"
+    },
+    {
+        "Id": "T_Blue_01",
+        "Type": "Tshirt",
+        "Description": "Tricou albastru Urban Addict Barcelona.",
+        "Brand": "Urban Addict"
+    },
+    {
+        "Id": "T_Negru_04",
+        "Type": "Tshirt",
+        "Description": "Tricou negru Digital Brain.",
+        "Brand": "SodaTees"
+    },
+    {
+        "Id": "T_Blue_02",
+        "Type": "Tshirt",
+        "Description": "Tricou albastru (2).",
+        "Brand": "H&M"
+    },
+    {
+        "Id": "T_Alb_03",
+        "Type": "Tshirt",
+        "Description": "Tricou alb in dungi negre.",
+        "Brand": "Kenvelo",
+        "Model": "Kvl Urban"
+    },
+    {
+        "Id": "T_Negru_05",
+        "Type": "Tshirt",
+        "Description": "Tricou negru (5).",
+        "Brand": "Adidas"
+    },
+    {
+        "Id": "T_Negru_06",
+        "Type": "Tshirt",
+        "Description": "Tricou negru fara maneci (1).",
+        "Brand": "Lyton"
+    },
+    {
+        "Id": "T_Negru_07",
+        "Type": "Tshirt",
+        "Description": "Tricou negru fara maneci (2).",
+        "Brand": "Berreto International",
+        "Model": "Blue 979"
+    },
+    {
+        "Id": "T_Negru_08",
+        "Type": "Tshirt",
+        "Description": "Tricou negru Weird Astronaut.",
+        "Brand": "SodaTees"
+    },
+    {
+        "Id": "T_Gri_02",
+        "Type": "Tshirt",
+        "Description": "Tricou gri (2).",
+        "Brand": "RG512"
+    },
+    {
+        "Id": "T_Maro_02",
+        "Type": "Tshirt",
+        "Description": "Tricou maro in dungi (2).",
+        "Brand": "Zetti"
+    },
+    {
+        "Id": "T_Alb_04",
+        "Type": "Tshirt",
+        "Description": "Tricou alb (4).",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "T_Alb_05",
+        "Type": "Tshirt",
+        "Description": "Tricou alb (5).",
+        "Brand": "Rehord"
+    },
+    {
+        "Id": "T_Alb_06",
+        "Type": "Tshirt",
+        "Description": "Tricou alb cu dungi rosii.",
+        "Brand": "H&M"
+    },
+    {
+        "Id": "T_Alb_07",
+        "Type": "Tshirt",
+        "Description": "Tricou alb cu dungi negre.",
+        "Brand": "Urban"
+    },
+    {
+        "Id": "T_Alb_08",
+        "Type": "Tshirt",
+        "Description": "Tricou alb Godzilla.",
+        "Brand": "Toho"
+    },
+    {
+        "Id": "T_Verde_02",
+        "Type": "Tshirt",
+        "Description": "Tricou verde (2).",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "T_Gri_03",
+        "Type": "Tshirt",
+        "Description": "Tricou gri in dungi negre.",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "T_Blue_03",
+        "Type": "Tshirt",
+        "Description": "Tricou FC Barcelona.",
+        "Brand": "Nike"
+    },
+    {
+        "Id": "T_Blue_04",
+        "Type": "Tshirt",
+        "Description": "Tricou albastru inchis.",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "T_Visiniu_01",
+        "Type": "Tshirt",
+        "Description": "Tricou visiniu (1).",
+        "Brand": "H&M"
+    },
 
 
-  {
-    "Id": "B_01",
-    "Type": "Blouse",
-    "Description": "Bluza gri-deschis cu dungi verzi.",
-    "Brand": "Piazza Italia",
-    "Model": "Man Basic"
-  },
-  {
-    "Id": "B_02",
-    "Type": "Blouse",
-    "Description": "Bluza cu dungi gri si albastru inchis.",
-    "Brand": "Fundango"
-  },
-  {
-    "Id": "B_Rosie_01",
-    "Type": "Blouse",
-    "Description": "Bluza rosie cu dungi gri.",
-    "Brand": "Kenvelo"
-  },
-  {
-    "Id": "B_Alba_01",
-    "Type": "Blouse",
-    "Description": "Bluza alba cu pattern albastru.",
-    "Brand": "Muzoland"
-  },
-  {
-    "Id": "B_Verde_01",
-    "Type": "Blouse",
-    "Description": "Bluza verde.",
-    "Brand": "Kenvelo"
-  },
-  {
-    "Id": "B_Gri_01",
-    "Type": "Blouse",
-    "Description": "Bluza gri cu dungi negre.",
-    "Brand": "Morani"
-  },
-  {
-    "Id": "B_Neagra_01",
-    "Type": "Blouse",
-    "Description": "Bluza neagra."
-  },
-  {
-    "Id": "B_Neagra_02",
-    "Type": "Blouse",
-    "Description": "Bluza neagra cu gri.",
-    "Brand": "Lee Cooper"
-  },
-  {
-    "Id": "B_Verde_02",
-    "Type": "Blouse",
-    "Description": "Bluza verde.",
-    "Brand": "Zara"
-  },
-  {
-    "Id": "B_Visinie_01",
-    "Type": "Blouse",
-    "Description": "Bluza visinie.",
-    "Brand": "Kenvelo"
-  },
-  {
-    "Id": "B_Visinie_02",
-    "Type": "Blouse",
-    "Description": "Bluza visinie cu pattern alb.",
-    "Brand": "Springfield"
-  },
-  {
-    "Id": "B_Gri_02",
-    "Type": "Blouse",
-    "Description": "Bluza gri cu dungi negre.",
-    "Brand": "Kenvelo"
-  },
-  {
-    "Id": "B_Gri_03",
-    "Type": "Blouse",
-    "Description": "Bluza gri.",
-    "Brand": "Mark & Spencer"
-  }
+    {
+        "Id": "CS_01",
+        "Type": "Shirt",
+        "Description": "Camasa maneci scurte cu dungi rosii.",
+        "Brand": "Columbia"
+    },
+    {
+        "Id": "CS_02",
+        "Type": "Shirt",
+        "Description": "Camasa maneci scurte cu dungi albastre.",
+        "Brand": "oviesse"
+    },
+    {
+        "Id": "CS_03",
+        "Type": "Shirt",
+        "Description": "Camasa albastra cu maneci scurte.",
+        "Model": "MSN"
+    },
+    {
+        "Id": "CS_04",
+        "Type": "Shirt",
+        "Description": "Camasa visinie cu maneci scurte.",
+        "Brand": "Bigotti"
+    },
+    {
+        "Id": "CS_05",
+        "Type": "Shirt",
+        "Description": "Camasa rosie cu maneci scurte.",
+        "Brand": "Kenvelo"
+    },
+
+    {
+        "Id": "C_Alba_01",
+        "Type": "Shirt",
+        "Description": "Camasa alba cu dungi albastre.",
+        "Brand": "Louis Purple"
+    },
+    {
+        "Id": "C_Alba_02",
+        "Type": "Shirt",
+        "Description": "Camasa albastra cu dungi.",
+        "Brand": "H&M"
+    },
+    {
+        "Id": "C_Alba_03",
+        "Type": "Shirt",
+        "Description": "Camasa alba cu dungi rosii.",
+        "Brand": "Bigotti"
+    },
+    {
+        "Id": "C_Crem_01",
+        "Type": "Shirt",
+        "Description": "Camasa crem.",
+        "Brand": "Columbia"
+    },
+    {
+        "Id": "C_Maro_01",
+        "Type": "Shirt",
+        "Description": "Camasa maro.",
+        "Brand": "Columbia"
+    },
+    {
+        "Id": "C_Mov_01",
+        "Type": "Shirt",
+        "Description": "Camasa mov.",
+        "Brand": "Avva"
+    },
+    {
+        "Id": "C_Gri_01",
+        "Type": "Shirt",
+        "Description": "Camasa gri.",
+        "Brand": "Emilio Corali"
+    },
+    {
+        "Id": "C_Gri_02",
+        "Type": "Shirt",
+        "Description": "Camasa gri subtire.",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "C_Gri_03",
+        "Type": "Shirt",
+        "Description": "Camasa gri subtire cu pattern.",
+        "Brand": "Louis Purple"
+    },
+    {
+        "Id": "C_Gri_04",
+        "Type": "Shirt",
+        "Description": "Camasa gri.",
+        "Brand": "Louis Purple"
+    },
+    {
+        "Id": "C_Blue_01",
+        "Type": "Shirt",
+        "Description": "Camasa albastru deschis."
+    },
+    {
+        "Id": "C_Caro_01",
+        "Type": "Shirt",
+        "Description": "Camasa bej in carouri.",
+        "Brand": "Columbia"
+    },
+    {
+        "Id": "C_Caro_02",
+        "Type": "Shirt",
+        "Description": "Camasa alba in carouri albastre.",
+        "Brand": "Massimo Dutti"
+    },
+    {
+        "Id": "C_Neagra_01",
+        "Type": "Shirt",
+        "Description": "Camasa neagra cu puncte albe.",
+        "Brand": "Bigotti"
+    },
+    {
+        "Id": "C_Rosie_01",
+        "Type": "Shirt",
+        "Description": "Camasa rosie.",
+        "Brand": "Escudo"
+    },
+
+    {
+        "Id": "B_01",
+        "Type": "Blouse",
+        "Description": "Bluza gri-deschis cu dungi verzi.",
+        "Brand": "Piazza Italia",
+        "Model": "Man Basic"
+    },
+    {
+        "Id": "B_02",
+        "Type": "Blouse",
+        "Description": "Bluza cu dungi gri si albastru inchis.",
+        "Brand": "Fundango"
+    },
+    {
+        "Id": "B_Rosie_01",
+        "Type": "Blouse",
+        "Description": "Bluza rosie cu dungi gri.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "B_Rosie_02",
+        "Type": "Blouse",
+        "Description": "Bluza rosie.",
+        "Brand": "Cato"
+    },
+    {
+        "Id": "B_Alba_01",
+        "Type": "Blouse",
+        "Description": "Bluza alba cu pattern albastru.",
+        "Brand": "Muzoland"
+    },
+    {
+        "Id": "B_Alba_02",
+        "Type": "Blouse",
+        "Description": "Bluza alba.",
+        "Brand": "Bossini"
+    },
+    {
+        "Id": "B_Verde_01",
+        "Type": "Blouse",
+        "Description": "Bluza verde.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "B_Gri_01",
+        "Type": "Blouse",
+        "Description": "Bluza gri cu dungi negre.",
+        "Brand": "Morani"
+    },
+    {
+        "Id": "B_Neagra_01",
+        "Type": "Blouse",
+        "Description": "Bluza neagra."
+    },
+    {
+        "Id": "B_Neagra_02",
+        "Type": "Blouse",
+        "Description": "Bluza neagra cu gri.",
+        "Brand": "Lee Cooper"
+    },
+    {
+        "Id": "B_Neagra_03",
+        "Type": "Blouse",
+        "Description": "Bluza neagra.",
+        "Brand": "Zara"
+    },
+    {
+        "Id": "B_Verde_02",
+        "Type": "Blouse",
+        "Description": "Bluza verde.",
+        "Brand": "Zara"
+    },
+    {
+        "Id": "B_Verde_03",
+        "Type": "Blouse",
+        "Description": "Bluza verde cu dungi.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "B_Visinie_01",
+        "Type": "Blouse",
+        "Description": "Bluza visinie.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "B_Visinie_02",
+        "Type": "Blouse",
+        "Description": "Bluza visinie cu pattern alb.",
+        "Brand": "Springfield"
+    },
+    {
+        "Id": "B_Gri_02",
+        "Type": "Blouse",
+        "Description": "Bluza gri cu dungi negre.",
+        "Brand": "Kenvelo"
+    },
+    {
+        "Id": "B_Gri_03",
+        "Type": "Blouse",
+        "Description": "Bluza gri.",
+        "Brand": "Mark & Spencer"
+    },
+    {
+        "Id": "B_Orange_01",
+        "Type": "Blouse",
+        "Description": "Bluza orange inchis.",
+        "Brand": "Massimo Dutti"
+    }
 ]
