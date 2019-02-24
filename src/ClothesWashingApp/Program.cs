@@ -17,6 +17,14 @@ namespace ClothesWashingApp
 
             LaunchCommand(args);
 
+            string input;
+            while (!string.IsNullOrEmpty(input = Console.ReadLine()))
+            {
+                var inputTokens = input.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                LaunchCommand(inputTokens);
+                Console.WriteLine();
+            }
+
             DisposeDIContainer();
 
             Console.WriteLine();
@@ -36,10 +44,20 @@ namespace ClothesWashingApp
 
         static void LaunchCommand(IReadOnlyList<string> args)
         {
-            var commandTypeSwitch = args[0];
+            var commandTypeSwitch = args.Any() ? args[0] : null;
 
-            var commandFactory = new CommandFactory(_diContainer);
-            var command = commandFactory.CreateCommand(commandTypeSwitch);
+            var commandFactory = _diContainer.Resolve<ICommandFactory>();
+            ICommand command;
+
+            try
+            {
+                command = commandFactory.CreateCommand(commandTypeSwitch);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return;
+            }
 
             var commandArguments = args.Skip(1);
             command.Execute(commandArguments);

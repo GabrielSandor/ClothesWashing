@@ -13,6 +13,8 @@ namespace ClothesWashingApp.RegistrationModules
         {
             base.Load(builder);
 
+            builder.Register(c => builder).AsSelf();
+
             builder.RegisterType<FindDirtyClothesService>().As<IFindDirtyClothesService>();
             builder.RegisterType<WearOutfitService>().As<IWearOutfitService>();
             builder.RegisterType<WashClothesService>().As<IWashClothesService>();
@@ -29,6 +31,8 @@ namespace ClothesWashingApp.RegistrationModules
 
         private static void RegisterCommands(ContainerBuilder builder)
         {
+            builder.RegisterType<CommandFactory>().As<ICommandFactory>();
+
             builder.RegisterType<ImportClothesCommand>();
             builder.RegisterType<WearOutfitCommand>();
             builder.RegisterType<WashCommand>();
@@ -37,6 +41,7 @@ namespace ClothesWashingApp.RegistrationModules
             builder.RegisterType<ShowClothesDetailsCommand>();
             builder.RegisterType<WashDirtyClothesCommand>();
             builder.RegisterType<SetDirtyClothesCommand>();
+            builder.RegisterType<NullCommand>();
         }
     }
 }
